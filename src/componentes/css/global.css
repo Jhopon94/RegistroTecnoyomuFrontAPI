@@ -1,0 +1,35 @@
+@font-face{
+    font-family: 'Orbitron';
+    src:url('./fuentes/Orbitron-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Orbitron-Bold';
+    src:url('./fuentes/Orbitron-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: bold;
+}
+@font-face{
+    font-family: 'Orbitron-Medium';
+    src:url('./fuentes/Orbitron-Medium.ttf') format('truetype');
+    font-weight: medium;
+    font-style: medium;
+}
+@font-face{
+    font-family: 'Orbitron-Black';
+    src:url('./fuentes/Orbitron-Black.ttf') format('truetype');
+    font-weight: black;
+    font-style: black;
+}
+
+:root{
+    --colorRojito: #fd593f;
+    --colorYomu: #00fcd2;
+    --colorAzulito: #1486C9;
+    --colorMoradito: #3c7596;
+    --fuenteOrbitronRegular: 'Orbitron', Orbitron;
+    --fuenteOrbitronMedium: 'Orbitron-Medium', Orbitron-Medium;
+    --fuenteOrbitronBlack: 'Orbitron-Black', Orbitron-Black;
+    --fuenteOrbitronBold: 'Orbitron-Bold', Orbitron-Bold;
+}

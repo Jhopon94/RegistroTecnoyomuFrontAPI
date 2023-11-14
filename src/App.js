@@ -1,5 +1,5 @@
-import yeye from './img/yeye.png';
-import yeye2 from './img/yeye2.png'
+import yeye from './componentes/img/yeye.png';
+import yeye2 from './componentes/img/yeye2.png'
 import './App.css';
 import { useState } from 'react';
 

@@ -1,0 +1,73 @@
+@import './global.css';
+
+#contenedorPrincipal{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: 100%;
+}
+#cajasBotones{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#cajitaUsuario, #cajitaPass, #btnEntrar, #btnAnonimo{
+    font-family: var(--fuenteOrbitronRegular);
+    border-radius: 12px;
+}
+#btnEntrar, #btnAnonimo{
+    height: calc(100vh / 9);
+    cursor: pointer;
+}
+#cajitaUsuario, #cajitaPass{
+    height: calc(100vh / 14);
+    background-color: var(--colorYomu);
+    font-size: 48px;
+    width: 80%;
+}
+input::placeholder{
+    color: black;
+    opacity: 0.25;
+    padding-left: 5%;
+}
+#btnEntrar{
+    background-color: var(--colorAzulito);
+    width: 35%;
+    font-family: var(--fuenteOrbitronBold);
+    font-size: 48px;
+    text-align: center;
+    color: white;
+    -webkit-text-stroke: 1px black;
+    box-shadow: 0px 0px 5px black;
+}
+#btnEntrar:active{
+    box-shadow: inset 2px 2px 10px black;
+}
+#btnAnonimo{
+    background-color: transparent;
+    border: transparent;
+    width: 100%;
+    font-size: 32px;
+    color: white;
+    font-family: var(--fuenteOrbitronMedium);
+    -webkit-text-stroke: 1px black;
+    text-decoration: underline;
+    text-decoration-color: black;
+    text-decoration-thickness: 5px;
+}
+#btnAnonimo:active{
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+#contenedorLogo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+}
+#logoLogin{
+    width: 100%;
+}
