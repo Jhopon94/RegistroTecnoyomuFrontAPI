@@ -1,0 +1,18 @@
+@import './global.css';
+
+.btnGeneral{
+    width: 25vw;
+    height: 17vh;
+    background-color: transparent;
+    border-color: var(--colorYomu);
+    border-radius: 12px;
+    border-width: 7px;
+    font-family: var(--fuenteOrbitronMedium);
+    font-size: 38px;
+    overflow: hidden;
+    color: var(--colorYomu);
+    cursor: pointer;
+}
+.btnGeneral:active{
+    background-color: rgba(0, 0, 0, 0.2);
+}

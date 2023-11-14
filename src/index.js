@@ -4,11 +4,24 @@ import './index.css';
 import App from './App';
 import LogIn from './componentes/Login';
 import reportWebVitals from './reportWebVitals';
+import Cabezal from './componentes/Cabezal';
+import BotonGeneral from './componentes/BotonGeneral';
+import Administracion from './componentes/Administracion';
+import ServicioCliente from './componentes/ServicioCliente';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <LogIn />
+    <Router>
+      <Routes>
+        <Route path="/" Component={LogIn} />
+        <Route path="/Cabezal" Component={Cabezal} />
+        <Route path="BotonGeneral" Component={BotonGeneral} />
+        <Route path="/Administracion" Component={Administracion} />
+        <Route path="/ServicioCLiente" Component={ServicioCliente} />
+      </Routes>
+    </Router>
   </React.StrictMode>
 );
 
