@@ -18,8 +18,8 @@ function LogIn() {
                 <div id="listaPaginas">
                     <Link to="/Administracion">Administración</Link>
                     <Link to="/ServicioCliente">Servicio al Cliente</Link>
-                    <Link to="/Cabezal">Cabezal</Link>
-                    <Link to="/Cabezal">Cabezal</Link>
+                    <Link to="/Reparacion">Reparacion</Link>
+                    <Link to="/Contabilidad">Contabilidad</Link>
                 </div>
                 <div id="cajasBotones" >
                     <div id="margenSuperior"></div>

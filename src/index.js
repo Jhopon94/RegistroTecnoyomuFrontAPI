@@ -8,7 +8,9 @@ import Cabezal from './componentes/Cabezal';
 import BotonGeneral from './componentes/BotonGeneral';
 import Administracion from './componentes/Administracion';
 import ServicioCliente from './componentes/ServicioCliente';
+import Contabilidad from './componentes/Contabilidad';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Reparacion from './componentes/Reparacion';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,6 +22,8 @@ root.render(
         <Route path="BotonGeneral" Component={BotonGeneral} />
         <Route path="/Administracion" Component={Administracion} />
         <Route path="/ServicioCLiente" Component={ServicioCliente} />
+        <Route path="/Contabilidad" Component={Contabilidad} />
+        <Route path="/Reparacion" Component={Reparacion} />
       </Routes>
     </Router>
   </React.StrictMode>

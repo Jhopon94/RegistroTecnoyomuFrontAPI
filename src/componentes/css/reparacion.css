@@ -1,0 +1,34 @@
+@import './global.css';
+
+
+#contenedorPrincipalReparacion{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 25vh 10vh 65vh;
+    gap: 4%;
+}
+tr, th, thead, table{
+    border: 2px solid black;
+}
+table{
+    align-self: flex-start;
+    justify-self: center;
+    width: 90%;
+    table-layout: auto;
+    background-color: white;
+    border-collapse: collapse;
+    border-radius: 12px;
+}
+thead{
+    font-family: var(--fuenteOrbitronBold);
+    font-size: x-large;
+    background-color: var(--colorYomu);
+}
+
+#etBusquedaReparacion{
+    width: 90%;
+    justify-self: center;
+    border-radius: 12px;
+    font-family: var(--fuenteOrbitronBold);
+    font-size: 32px;
+}
