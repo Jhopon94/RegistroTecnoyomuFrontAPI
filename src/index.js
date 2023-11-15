@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import LogIn from './componentes/Login';
 import reportWebVitals from './reportWebVitals';
 import Cabezal from './componentes/Cabezal';
@@ -9,21 +8,22 @@ import BotonGeneral from './componentes/BotonGeneral';
 import Administracion from './componentes/Administracion';
 import ServicioCliente from './componentes/ServicioCliente';
 import Contabilidad from './componentes/Contabilidad';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Reparacion from './componentes/Reparacion';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
-    <Router>
+    <Router basename="/">
       <Routes>
-        <Route path="/" Component={LogIn} />
-        <Route path="/Cabezal" Component={Cabezal} />
-        <Route path="BotonGeneral" Component={BotonGeneral} />
-        <Route path="/Administracion" Component={Administracion} />
-        <Route path="/ServicioCLiente" Component={ServicioCliente} />
-        <Route path="/Contabilidad" Component={Contabilidad} />
-        <Route path="/Reparacion" Component={Reparacion} />
+        <Route path="/" element={<LogIn/>} />
+        <Route path="/Cabezal" element={<Cabezal/>} />
+        <Route path="/BotonGeneral" element={<BotonGeneral/>} />
+        <Route path="/Administracion" element={<Administracion/>} />
+        <Route path="/ServicioCliente" element={<ServicioCliente/>} />
+        <Route path="/Contabilidad" element={<Contabilidad/>} />
+        <Route path="/Reparacion" element={<Reparacion/>} />
       </Routes>
     </Router>
   </React.StrictMode>

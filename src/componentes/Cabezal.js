@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Cabezal = ({ titulo, cerrarSesion }) => {
 
-    const logoCabezal = <img id="logoCabezal" src={logo} />;
+    const logoCabezal = <img alt='' id="logoCabezal" src={logo} />;
     let textoTitulo = titulo;
     let banderaSesion = cerrarSesion;
     const tituloCabezal = <label id="tituloCabezal" >{textoTitulo}</label>;
