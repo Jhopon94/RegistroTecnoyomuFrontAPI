@@ -9,7 +9,6 @@ const cajitaPass = <input type="password" id="cajitaPass" placeholder="Contrase�
 const btnEntrar = <button id="btnEntrar">Entrar</button>;
 const btnAnonimo = <button id="btnAnonimo">Registrar equipo como usuario anónimo</button>;
 
-
 function LogIn() {
     return (
         
@@ -19,7 +18,7 @@ function LogIn() {
                     <Link to="/Administracion">Administración</Link>
                     <Link to="/ServicioCliente">Servicio al Cliente</Link>
                     <Link to="/Reparacion">Reparacion</Link>
-                    <Link to="/Contabilidad">Contabilidad</Link>
+                    <Link to="/Contabilidad" state={"login"}>Contabilidad</Link>
                 </div>
                 <div id="cajasBotones" >
                     <div id="margenSuperior"></div>

@@ -5,7 +5,7 @@ import BotonGeneral from "./BotonGeneral";
 function Inventario() {
     return (
         <div id="contenedorPrincipalInventario">
-            <Cabezal titulo="Inventario" cerrarSesion={true}/>
+            <Cabezal titulo="Inventario" cerrarSesion={false} atras={true}/>
             <div id="contenedorBotonesInventario">
                 <div id="contBtnRegisItems"><BotonGeneral idImportado="btnRegisItems" texto="Registrar Item" /></div>
                 <div id="contBtnListaItems"><BotonGeneral idImportado="btnListaItems" texto="Lista de Items" /></div>
