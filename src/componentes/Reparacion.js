@@ -4,7 +4,7 @@ import Cabezal from "./Cabezal";
 const Reparacion = () =>{
     return(
         <div id="contenedorPrincipalReparacion">
-            <Cabezal titulo="Reparación" cerrarSesion={true} />
+            <Cabezal titulo="Reparación" cerrarSesion={true}  atras={false}/>
             <input id="etBusquedaReparacion" placeholder="Buscar por Nombre"></input>
             <table id="tablaReparacion">
                 <thead>

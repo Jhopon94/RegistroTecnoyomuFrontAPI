@@ -3,14 +3,18 @@ import logo from './img/logoLogin.png';
 import { Link } from 'react-router-dom';
 
 
-const Cabezal = ({ titulo, cerrarSesion }) => {
+const Cabezal = ({ titulo, cerrarSesion, atras}) => {
 
     const logoCabezal = <img alt='' id="logoCabezal" src={logo} />;
     let textoTitulo = titulo;
-    let banderaSesion = cerrarSesion;
     const tituloCabezal = <label id="tituloCabezal" >{textoTitulo}</label>;
     const etCerrarSesion = <label id="etCerrarSesion"><Link to="/">Cerrar Sesión</Link></label>;
+    const etAtras = <label id="etAtras" onClick={() => window.history.back()}>Atrás</label>;
 
+    const BtnAtrasSesion = () => {
+        if(cerrarSesion) return <etCerrarSesion/>;
+        if(atras) return <etAtras/>;
+    }
 
     return (
         <div id="ContenedorPrincipalCabezal">
@@ -20,7 +24,8 @@ const Cabezal = ({ titulo, cerrarSesion }) => {
                 {tituloCabezal}
             </div>
             <div id="contCerrarSesion">
-                {banderaSesion ? (etCerrarSesion) : null }
+                {cerrarSesion ? etCerrarSesion : null}
+                {atras ? etAtras :null}
                 </div>
         </div>
     )

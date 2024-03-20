@@ -33,3 +33,13 @@
     --fuenteOrbitronBlack: 'Orbitron-Black', Orbitron-Black;
     --fuenteOrbitronBold: 'Orbitron-Bold', Orbitron-Bold;
 }
+.tresBotones{
+    display: flex;
+    flex: 1 0 50%;
+    margin: 0 auto;
+    justify-content: space-around;
+}
+.auxTresBotones{
+    flex:1 0 100%;
+    height: 7vh;
+}
