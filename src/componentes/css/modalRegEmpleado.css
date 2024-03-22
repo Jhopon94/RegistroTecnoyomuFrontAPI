@@ -1,0 +1,48 @@
+.inputModalRegEmpleado {
+    font-family: var(--fuenteOrbitronRegular);
+}
+
+#formRegEmpleado {
+    display: flex;
+    flex-direction: column;
+}
+
+#contBotonesRegEmpleado {
+    display: grid;
+    grid-template-columns:repeat(4, 15vw);
+    grid-template-rows: auto auto;
+    gap: 10px;
+
+    grid-template-areas:
+        "foto . registrar registrar"
+        "foto . cancelar cancelar"
+    ;
+}
+
+#btnFotoRegEmplDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: foto;
+}
+
+#btnRegistrarEmpDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: registrar;
+}
+
+#btnCancelRegEmpDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: cancelar;
+}
+#formRegEmpleado > input{
+    border-radius: 12px;
+    text-align: center;
+    font-size: xx-large;
+    margin-bottom: 2vh;
+}
+

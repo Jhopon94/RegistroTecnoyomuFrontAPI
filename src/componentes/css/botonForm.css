@@ -1,0 +1,42 @@
+.btnFoto{
+    background-color: white;
+    height: 120px;
+    width: 120px;
+    cursor: pointer;
+}
+.btnRegistrar, .btnGuardar, .btnEditar{
+    background-color: var(--colorAzulito);
+    color: white;
+    height: 60px;
+    width: 250px;
+    overflow: hidden;
+    border-width: 1px;
+    border-radius: 12px;
+    cursor: pointer;
+    text-align: center;
+}
+.btnCancelar, .btnEliminar, .btnAtras{
+    background-color: var(--colorRojito);
+    color: white;
+    height: 60px;
+    width: 250px;
+    overflow: hidden;
+    border-width: 1px;
+    border-radius: 12px;
+    cursor: pointer;
+    text-align: center;
+}
+button{
+    font-family: var(--fuenteOrbitronRegular);
+    font-size: xx-large;
+}
+button:active{
+    box-shadow: inset 2px 2px 10px black;
+}
+.clicOff{
+    cursor: auto;
+    background-color: lightgray;
+}
+.clicOff:active{
+    box-shadow: none;
+}

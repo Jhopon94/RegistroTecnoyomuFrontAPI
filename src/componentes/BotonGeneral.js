@@ -1,8 +1,8 @@
 import './css/botonGeneral.css';
 
-const BotonGeneral = ({texto, idImportado}) =>{
+const BotonGeneral = ({texto, idImportado, onClickImportado}) =>{
     let textoBtn = texto;
-    const btnGeneral = <button id={idImportado} className="btnGeneral">{textoBtn}</button>
+    const btnGeneral = <button id={idImportado} className="btnGeneral" onClick={onClickImportado}>{textoBtn} </button>
 
     return (
         <div>

@@ -1,0 +1,69 @@
+.editEmplFilaTabla{
+    cursor: pointer;
+}
+
+.inputModalRegEmpleado {
+    font-family: var(--fuenteOrbitronRegular);
+}
+
+#formEditEmpleado {
+    display: flex;
+    flex-direction: column;
+}
+
+#contBotonesEditEmpleado {
+    display: grid;
+    grid-template-columns:repeat(4, 1fr);
+    grid-template-rows: auto auto;
+    gap: 10px;
+
+    grid-template-areas:
+        "foto marcar editar registrar"
+        "foto marcar editar cancelar"
+    ;
+}
+
+#btnFotoEditEmplDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: foto;
+}
+
+#btnRegEditEmplDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: registrar;
+}
+
+#btnCancelEditEmplpDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: cancelar;
+}
+#formEditEmpleado > input{
+    border-radius: 12px;
+    text-align: center;
+    font-size: xx-large;
+    margin-bottom: 2vh;
+}
+
+#btnMarcarEditEmplpDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: marcar;
+}
+
+#btnEditarEditEmplpDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: editar;
+}
+
+.noEditable{
+    background-color: lightgrey;
+}

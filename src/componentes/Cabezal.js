@@ -1,9 +1,13 @@
+import { useState } from 'react';
 import './css/cabezal.css';
 import logo from './img/logoLogin.png';
 import { Link } from 'react-router-dom';
 
 
 const Cabezal = ({ titulo, cerrarSesion, atras}) => {
+
+    const [auxCerrarSesion, setAuxCerrarSesion] = useState(cerrarSesion); 
+    const [auxAtras, setAuxAtras] = useState(atras);
 
     const logoCabezal = <img alt='' id="logoCabezal" src={logo} />;
     let textoTitulo = titulo;
@@ -12,8 +16,8 @@ const Cabezal = ({ titulo, cerrarSesion, atras}) => {
     const etAtras = <label id="etAtras" onClick={() => window.history.back()}>Atrás</label>;
 
     const BtnAtrasSesion = () => {
-        if(cerrarSesion) return <etCerrarSesion/>;
-        if(atras) return <etAtras/>;
+        if(auxCerrarSesion) return <etCerrarSesion/>;
+        if(auxAtras) return <etAtras/>;
     }
 
     return (
