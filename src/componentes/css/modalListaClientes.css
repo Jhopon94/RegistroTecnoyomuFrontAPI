@@ -1,0 +1,50 @@
+@import './global.css';
+
+#formListaClientes{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto auto;
+
+    grid-template-areas: 
+        "input input select"
+        "table table table"
+        ". cancelar ."
+    ;
+}
+
+#inputFiltroCli{
+    grid-area: input;
+}
+
+#selectFiltroCli{
+    grid-area: select;
+}
+
+#tablaListaCli{
+    grid-area: table;
+}
+
+#btnCancelarListCli{
+    grid-area: cancelar;
+}
+
+.formListaCliChilds{
+    font-size: xx-large;
+    border-radius: 12px;
+    font-family: var(--fuenteOrbitronRegular);
+    margin-bottom: 3vh;
+    margin-right: 2vw;
+
+}
+
+#puntoCli{
+    color: greenyellow;
+}
+#formListaClientes > table{
+    width: 90%;
+    overflow: scroll;
+    border-collapse: separate;
+}
+#formListaClientes > table > tr{
+    cursor: pointer;
+}

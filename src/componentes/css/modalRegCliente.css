@@ -1,0 +1,34 @@
+#formRegCliente {
+    display: flex;
+    flex-direction: column;
+}
+
+#contBotonesRegCliente {
+    display: flex;
+    margin: 5vh auto;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#btnRegistrarClienteDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 6vw;
+}
+
+#btnCancelRegClienteDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 6vw;
+}
+
+#formRegCliente > input{
+    font-family: var(--fuenteOrbitronRegular);
+    border-radius: 12px;
+    text-align: center;
+    font-size: xx-large;
+    margin-bottom: 4vh;
+}

@@ -1,0 +1,58 @@
+.editEmplFilaTabla{
+    cursor: pointer;
+}
+
+.inputModalEditCliente {
+    font-family: var(--fuenteOrbitronRegular);
+}
+
+#formEditCliente {
+    display: flex;
+    flex-direction: column;
+}
+
+#contBotonesEditCliente {
+    display: grid;
+    grid-template-columns:repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 50px;
+    margin: 4vh 4vw;
+
+    grid-template-areas:
+        "registrar editar cancelar"
+    ;
+}
+
+
+#btnRegEditCliDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: registrar;
+}
+
+#btnCancelCliEmplpDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: cancelar;
+}
+
+#btnEditarEditClipDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: editar;
+}
+
+#formEditCliente > input{
+    border-radius: 12px;
+    text-align: center;
+    font-size: xx-large;
+    margin-bottom: 2vh;
+}
+
+
+.noEditable{
+    background-color: lightgrey;
+}
