@@ -5,7 +5,7 @@ import { useState } from 'react';
 function ModalEditEmpleado({ isOpen, onClose}) {
 
     const [readOnly, setReadOnly] = useState(true);
-    const [clasesInput, setClasesInput] = useState('inputModalRegEmpleado noEditable');
+    const [clasesInput, setClasesInput] = useState('inputModalEditEmpleado noEditable');
     const [btnDesactivado, setBtnDesactivado] = useState(true);
     const [btnEditOff, setBtnEditOff] = useState(false);
     const [clasesBtnFoto, setClasesBtnFoto] = useState('btnFoto clicOff');
@@ -19,7 +19,7 @@ function ModalEditEmpleado({ isOpen, onClose}) {
         setBtnEditOff(true);
         setClasesBtnEdit('btnEditar clicOff');
         setReadOnly(false);
-        setClasesInput('inputModalRegEmpleado');
+        setClasesInput('inputModalEditEmpleado');
     }
 
     const PressCancelar = () => {
@@ -29,7 +29,7 @@ function ModalEditEmpleado({ isOpen, onClose}) {
         setBtnEditOff(false);
         setClasesBtnEdit('btnEditar');
         setReadOnly(true);
-        setClasesInput('inputModalRegEmpleado clicOff');
+        setClasesInput('inputModalEditEmpleado clicOff');
         onClose();
     }
 

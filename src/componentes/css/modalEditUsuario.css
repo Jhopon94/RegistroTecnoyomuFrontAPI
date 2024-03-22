@@ -1,0 +1,38 @@
+.inputModalEditUsuario {
+    font-family: var(--fuenteOrbitronRegular);
+    width: 90%;
+    margin-top: 1vh;
+}
+
+#formEditUsuario {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.contBotonesEditUsuario {
+    display: flex;
+    margin: 1vh auto;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btnEditUsuarioDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 6vw;
+}
+
+#formEditUsuario > input{
+    border-radius: 12px;
+    text-align: center;
+    font-size: xx-large;
+    margin-bottom: 10vh;
+}
+
+.noEditable{
+    background-color: lightgrey;
+}

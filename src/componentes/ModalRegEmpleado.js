@@ -3,11 +3,6 @@ import BotonForm from './BotonForm';
 
 function ModalRegEmpleado({ isOpen, onClose}) {
 
-    const RegistrarEmpleado = () => {
-        alert("Registrado exitosamente");
-        onClose();
-    }
-
 
     if (!isOpen) return null;
 

@@ -1,0 +1,48 @@
+@import './global.css';
+
+#formListaUsuarios{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto auto;
+
+    grid-template-areas: 
+        "input input select"
+        "table table table"
+        ". cancelar ."
+    ;
+}
+
+#inputFiltroUsu{
+    grid-area: input;
+}
+
+#selectFiltroUsu{
+    grid-area: select;
+}
+
+#tablaListaUsu{
+    grid-area: table;
+}
+
+#btnCancelarListUsu{
+    grid-area: cancelar;
+}
+
+.formListaUsuChilds{
+    font-size: xx-large;
+    border-radius: 12px;
+    font-family: var(--fuenteOrbitronRegular);
+    margin-bottom: 3vh;
+    margin-right: 2vw;
+
+}
+
+#formListaUsuarios > table{
+    width: 90%;
+    overflow: scroll;
+    border-collapse: separate;
+    text-align: center;
+}
+#formListaUsuarios > table > tr{
+    cursor: pointer;
+}
