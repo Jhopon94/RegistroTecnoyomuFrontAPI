@@ -19,7 +19,7 @@ const [abrirModalListaCLientes, setAbrirModalListaCLientes] = useState(false);
 
             </div>
             <ModalRegCliente isOpen={abrirModalRegCliente} onClose={() => setAbrirModalRegCliente(false)} />
-            <ModalListaClientes isOpen={abrirModalListaCLientes} onClose={() => setAbrirModalListaCLientes(false)} />
+            <ModalListaClientes deDondeViene="clientes" isOpen={abrirModalListaCLientes} onClose={() => setAbrirModalListaCLientes(false)} />
         </div>
     )
 }

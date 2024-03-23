@@ -1,0 +1,71 @@
+@import './global.css';
+
+#formPartesEqIng{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.contInputAzulito{
+    display: flex;
+    background-color: var(--colorAzulito);
+    width: 70vw;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    border: 2px solid black;
+}
+.cajitaModeloEq{
+    margin: 14px;
+    border-radius: 6px;
+    font-family: var(--fuenteOrbitronMedium);
+    font-size: x-large;
+    width: 90%;
+}
+
+.contEtCompPartes{
+    display: flex;
+    margin: 2vh auto;
+    flex-direction: column;
+    justify-content: left;
+    width: 100%;
+}
+
+.etCompPartes{
+    color: white;
+    font-family: var(--fuenteOrbitronBold);
+    margin-bottom: 2vh;
+    font-size: large;
+}
+
+#contPartesIngEq, #contPartesIngEq input{
+    font-family: var(--fuenteOrbitronRegular);
+    font-size: x-large;
+}
+.etPartesIngEq{
+    display: inline-block;
+    min-width: 30%;
+}
+
+#contPartesIngEq{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.parteIngEq{
+    margin: 2vh 0;
+}
+
+#contPartesIngEq input{
+    border-radius: 6px;
+}
+
+#contBotonesPartesIngEq{
+    display: flex;
+    margin: 4vh auto;
+    justify-content: space-between;
+    width: 100%;
+}

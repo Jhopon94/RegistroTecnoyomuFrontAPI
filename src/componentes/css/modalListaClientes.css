@@ -8,7 +8,7 @@
     grid-template-areas: 
         "input input select"
         "table table table"
-        ". cancelar ."
+        "cancelar cancelar cancelar"
     ;
 }
 
@@ -24,7 +24,7 @@
     grid-area: table;
 }
 
-#btnCancelarListCli{
+#contBotonesListaCli{
     grid-area: cancelar;
 }
 
@@ -47,4 +47,13 @@
 }
 #formListaClientes > table > tr{
     cursor: pointer;
+}
+
+#contBotonesListaCli{
+    display: flex;
+    margin: 5vh auto;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
 }

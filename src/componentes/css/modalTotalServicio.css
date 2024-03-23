@@ -1,0 +1,44 @@
+@import './global.css';
+
+#formTotalIngEq{
+    display: flex;
+    flex-direction: column;
+}
+
+#contBotonesTotalIngEq{
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    justify-content: space-around;
+    width: 100%;
+}
+.etTotalIngEq{
+    display: inline-block;
+    font-family: var(--fuenteOrbitronBold);
+    font-size: xx-large;
+    min-width: 30%;
+}
+
+#contEtTotalIngEq{
+    background-color: var(--colorAzulito);
+    padding: 2% 1%;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    margin-bottom: 5%;
+}
+.fuenteXLargOrbitron{
+    font-family: var(--fuenteOrbitronRegular);
+    font-size: xx-large;
+}
+#contAbonoIngEq{
+}
+#etAvisoAbono{
+    font-family: var(--fuenteOrbitronRegular);
+}
+#contAvisoAbono{
+    display: flex;
+    justify-content: end;
+    padding-right: 15%;
+    margin-bottom: 5%;
+
+}

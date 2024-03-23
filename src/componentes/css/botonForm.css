@@ -4,7 +4,7 @@
     width: 120px;
     cursor: pointer;
 }
-.btnRegistrar, .btnGuardar, .btnEditar{
+.btnRegistrar, .btnGuardar, .btnEditar, .btnAgregar, .btnContinuar, .btnAceptar{
     background-color: var(--colorAzulito);
     color: white;
     height: 60px;

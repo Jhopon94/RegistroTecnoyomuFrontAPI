@@ -1,0 +1,28 @@
+@import './global.css';
+
+#formServEqIng{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.etServTomarIngEq{
+    justify-self: left;
+    font-size: x-large;
+    color: white;
+    font-family: var(--fuenteOrbitronMedium);
+}
+.detalleSevIngEq{
+    width: 60%;
+    margin-right: 4%;
+}
+.precioServIngEq{
+    width: 30%;
+}
+.tituloDetallesIngEq{
+    margin-bottom: 2%;
+    padding-top: 0;
+    padding-bottom: 0;
+
+}
