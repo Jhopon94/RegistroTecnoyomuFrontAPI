@@ -1,0 +1,65 @@
+@import './global.css';
+
+#formListaEqEntregados{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto auto;
+
+    grid-template-areas: 
+        "input input select"
+        "table table table"
+        "cancelar cancelar cancelar"
+    ;
+}
+
+#inputFiltroEqEntregados{
+    grid-area: input;
+}
+
+#selectFiltroEqEntregados{
+    grid-area: select;
+}
+
+#tablaListaEqEntregados{
+    grid-area: table;
+    border-collapse: collapse;
+}
+
+#contBotonesListaEqEntregados{
+    grid-area: cancelar;
+}
+
+.formListaCliChilds{
+    font-size: xx-large;
+    border-radius: 12px;
+    font-family: var(--fuenteOrbitronRegular);
+    margin-bottom: 3vh;
+    margin-right: 2vw;
+
+}
+
+#puntoCli{
+    color: greenyellow;
+}
+#formListaEqEntregados > table{
+    width: 90%;
+    overflow: scroll;
+    border-collapse: separate;
+}
+#formListaEqEntregados > table > tr{
+    cursor: pointer;
+}
+
+#contBotonesListaEqEntregados{
+    display: flex;
+    margin: 5vh auto;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#formListaEqEntregados td:nth-child(2) {
+    border-left: 2px solid red;
+    padding-left: 2%;
+  }

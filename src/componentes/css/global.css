@@ -67,3 +67,9 @@
 .modalTransOff{ /*Elimina solo la transparencia*/
     background-color: var(--colorRojito);
 }
+.dosBotones{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+}

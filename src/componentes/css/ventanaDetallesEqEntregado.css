@@ -1,0 +1,96 @@
+@import './global.css';
+
+#formDetallesEqEntregado{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--colorRojito);
+
+    display:  flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100vw;
+    align-items: center;
+
+    font-family: var(--fuenteOrbitronRegular);
+    font-size: x-large;
+
+    overflow: auto;
+}
+
+#tituloDetallesEqEntregado{
+    background-color: var(--colorAzulito);
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    color: white;
+    font-family: var(--fuenteOrbitronBold);
+    letter-spacing: 2px;
+    font-size: xx-large;
+}
+
+#tituloDetallesEqEntregado label{
+    margin-left: 4%;
+    margin-right: 4%;
+}
+
+#filaDosDetallesEqEntregado{
+    display: flex;
+    width: 92%;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    color: white;
+    font-family: var(--fuenteOrbitronMedium);
+    letter-spacing: 2px;
+}
+
+#filaTresDetallesEqEntregado{
+    display: flex;
+    flex-direction: column;
+    width: 92%;
+}
+
+#filaTresDetallesEqEntregado > *{
+    margin: 1.5vh auto;
+}
+#auxContBotonesDetallesEqEntregado{
+    width: 92%;
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+
+#formDetallesEqEntregado textarea{
+    width: 100%;
+    height: 20vh;
+    border: 2px solid black;
+    border-radius: 6px;
+    font-size: x-large;
+    letter-spacing: 0;
+}
+
+#formDetallesEqEntregado .etDetalles{
+    font-family: var(--fuenteOrbitronMedium);
+    width: 100%;
+    padding-top: 1.5%;
+}
+
+#formDetallesEqEntregado table{
+    width: 100%;
+    margin-top: 3%;
+    border-collapse: collapse;
+    border-radius: 6px;
+}
+
+#formDetallesEqEntregado table td{
+    padding-left: 3%;
+}
+#formDetallesEqEntregado table th{
+    background-color: var(--colorAzulito);
+}
