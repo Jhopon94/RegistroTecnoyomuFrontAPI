@@ -15,6 +15,12 @@ function VentanaDetalleDeudor({ isOpen, onClose }) {
         else setClassBtnChulo('');
     }
 
+    const ManejarAtras = () => {
+        setIsChecked(false);
+        setClassBtnChulo('clicOff');
+        onClose();
+    }
+
     if (!isOpen) return null;
 
     return (
@@ -90,7 +96,7 @@ function VentanaDetalleDeudor({ isOpen, onClose }) {
                 
             </div>
             <div className='contBtn'>
-                <BotonForm textoBoton='Atrás' classNameImportado='btnCancelar' onClickImportado={onClose} />
+                <BotonForm textoBoton='Atrás' classNameImportado='btnCancelar' onClickImportado={ManejarAtras} />
             </div>
         </div>
     );
