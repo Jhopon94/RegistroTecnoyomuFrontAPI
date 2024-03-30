@@ -4,7 +4,7 @@
     width: 120px;
     cursor: pointer;
 }
-.btnRegistrar, .btnGuardar, .btnEditar, .btnAgregar, .btnContinuar, .btnAceptar{
+.btnRegistrar, .btnGuardar, .btnEditar, .btnAgregar, .btnContinuar, .btnAceptar, .btnMarcarEntregado{
     background-color: var(--colorAzulito);
     color: white;
     height: 60px;
@@ -39,4 +39,7 @@ button:active{
 }
 .clicOff:active{
     box-shadow: none;
+}
+.btnMarcarEntregado{
+    width: 100%;
 }
