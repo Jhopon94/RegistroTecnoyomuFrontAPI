@@ -1,11 +1,24 @@
 import './css/modalListaItems.css';
 import BotonForm from "./BotonForm";
 import ModalCantidadItems from './ModalCantidadItems';
+import ModalEditItem from './ModalEditItem';
 import { useState } from 'react';
 
-function ModalListaItems({ isOpen, onClose }) {
+function ModalListaItems({ isOpen, onClose, vieneDeContabilidad }) {
 
     const [ abrirCantidadItems, setAbrirCantidadItems] = useState(false);
+    const [editarItem, setEditarItem] = useState(false);
+
+    const ManejarClicTabla = () => {
+        if(vieneDeContabilidad){
+            setEditarItem(true);
+            setAbrirCantidadItems(false);
+        }
+        else{
+            setEditarItem(false);
+            setAbrirCantidadItems(true);
+        }
+    }
 
     if (!isOpen) return null;
     return (
@@ -14,13 +27,13 @@ function ModalListaItems({ isOpen, onClose }) {
                 <input type="text" placeholder='Búsqueda por Nombre'></input>
                 <div className='auxTableRadius'>
                     <table>
-                        <tr onClick={() => setAbrirCantidadItems(true)}>
+                        <tr onClick={ManejarClicTabla}>
                             <td>Ítem A</td>
                         </tr>
-                        <tr onClick={() => setAbrirCantidadItems(true)}>
+                        <tr onClick={ManejarClicTabla}>
                             <td>Ítem B</td>
                         </tr>
-                        <tr onClick={() => setAbrirCantidadItems(true)}>
+                        <tr onClick={ManejarClicTabla}>
                             <td>Ítem C</td>
                         </tr>
                     </table>
@@ -28,6 +41,7 @@ function ModalListaItems({ isOpen, onClose }) {
                 <BotonForm textoBoton='Cancelar' classNameImportado='btnCancelar' onClickImportado={onClose} />
             </div>
             <ModalCantidadItems isOpen={abrirCantidadItems} onClose={() => setAbrirCantidadItems(false)} />
+            <ModalEditItem isOpen={editarItem} onClose={() => setEditarItem(false)} />
         </div>
     );
 }

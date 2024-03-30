@@ -31,6 +31,5 @@
 #formListaTipoItem .auxTableRadius{
     width: 90%;
     border-radius: 12px;
-    background-color: blue;
     overflow: hidden;
 }

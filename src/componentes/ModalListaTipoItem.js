@@ -39,7 +39,7 @@ function ModalListaTipoItem({ isOpen, onClose, vieneDeContabilidad, agregandoIte
                     <BotonForm textoBoton='Cancelar' classNameImportado='btnCancelar' onClickImportado={onClose} />
                 </div>
             </div>
-            <ModalListaItems isOpen={abrirListaItems} onClose={() => setAbrirListaItems(false)} />
+            <ModalListaItems vieneDeContabilidad={vieneDeContabilidad} isOpen={abrirListaItems} onClose={() => setAbrirListaItems(false)} />
             <ModalAddTipoItem isOpen={abrirAddTipo} onClose={() => setAbrirAddTipo(false)} />
         </div>
     );
