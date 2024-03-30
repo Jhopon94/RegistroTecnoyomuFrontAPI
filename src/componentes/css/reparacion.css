@@ -4,9 +4,10 @@
 #contenedorPrincipalReparacion{
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 25vh 10vh 65vh;
+    grid-template-rows: 25vh auto;
     gap: 4%;
 }
+
 tr, th, thead, table{
     border: 2px solid black;
 }
@@ -25,10 +26,20 @@ thead{
     background-color: var(--colorYomu);
 }
 
+
 #etBusquedaReparacion{
     width: 90%;
     justify-self: center;
     border-radius: 12px;
     font-family: var(--fuenteOrbitronBold);
     font-size: 32px;
+}
+
+#contenedorPrincipalReparacion .aux{
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 3%;
 }
