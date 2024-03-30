@@ -1,0 +1,25 @@
+#formAddTipoItem .dosBotones{
+    width: 50vw;
+    margin: 6% auto;
+}
+#formAddTipoItem .labelInput{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    margin-top: 6%;
+    font-size: xx-large;
+}
+
+#formAddTipoItem .labelInput > input{
+    font-family: var(--fuenteOrbitronRegular);
+    font-size: xx-large;
+    width: 90%;
+    border-radius: 6px;
+    margin-right: 10%;
+}
+#formAddTipoItem .labelInput > label{
+    text-align: right;
+    width: 60%;
+    margin-right: 5%;
+    font-family: var(--fuenteOrbitronBold);
+}

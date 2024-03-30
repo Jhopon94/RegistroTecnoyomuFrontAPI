@@ -61,7 +61,7 @@ function VentanaDetallesReparacion({ isOpen, onClose }) {
                 </div>
             </div>
             <ModalCambiarEstadoRep isOpen={abrirCambiarEstado} onClose={() => setAbrirCambiarEstado(false)} />
-            <ModalListaTipoItem isOpen={abrirTiposItem} onClose={() => setAbrirTiposItem(false)}/>
+            <ModalListaTipoItem isOpen={abrirTiposItem} onClose={() => setAbrirTiposItem(false)} vieneDeContabilidad={false} agregandoItem={false}/>
         </div>
     );
 }

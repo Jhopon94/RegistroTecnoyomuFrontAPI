@@ -1,0 +1,42 @@
+#formRegItem{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: center;
+    width: 60%;
+
+    font-family: var(--fuenteOrbitronMedium);
+}
+#formRegItem > div{
+    display: flex;
+    flex-direction: row;
+    margin: 2% auto;
+    width: 100%;
+    justify-content: space-around;
+}
+#formRegItem input{
+    width: 60%;
+    font-size: x-large;
+    border-radius: 6px;
+    font-family: var(--fuenteOrbitronRegular);
+}
+
+#formRegItem .fila.tres{
+    width: 90%;
+    font-size: x-large;
+}
+
+#formRegItem .fila.tres input{
+    width: 30%;
+    margin-left: 2%;
+}
+#formRegItem .fila.dos input{
+    width: 90%;
+    text-align: center;
+}
+#formRegItem textarea{
+    width: 90%;
+    font-size: x-large;
+    height: 20vh;
+    border-radius: 6px;
+}
