@@ -1,0 +1,14 @@
+#formCambiarEstadoRep{
+    display: flex;
+    flex-direction: column;
+}
+
+#formCambiarEstadoRep .dosBotones{
+    width: 50vw;
+    margin: 3% auto;
+}
+#formCambiarEstadoRep select{
+    margin-top: 6%;
+    font-family: var(--fuenteOrbitronMedium);
+}
+

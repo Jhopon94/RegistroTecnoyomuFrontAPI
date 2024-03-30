@@ -1,6 +1,6 @@
 import './css/tablaReparacion.css';
 import BotonForm from './BotonForm';
-import VentanaDetallesEqIngresado from './VentanaDetallesEqIngresado';
+import VentanaDetallesReparacion from './VentanaDetallesReparacion';
 import { useState } from 'react';
 
 function TablaReparacion() {
@@ -13,7 +13,7 @@ function TablaReparacion() {
 
     const inputFiltro = <input className='formListaCliChilds' id='inputFiltroEqIngresados'></input>;
 
-    const [ abrirDetallesEqIngresado, setAbrirDetallesEqIngresado ] = useState(false);
+    const [ abrirDetallesReparacion, setAbrirDetallesReparacion ] = useState(false);
     const [mostrarSelect, setMostrarSelect] = useState(false);
 
     const VerificarFiltroPorEstado = (event) => {
@@ -39,14 +39,14 @@ function TablaReparacion() {
                         <option value='estado'>Estado</option>
                     </select>
                     <table className='formListaCliChilds' id="tablaListaEqIngresados">
-                        <tr className='editCliFilaTabla' onClick={() => setAbrirDetallesEqIngresado(true)}>
+                        <tr className='editCliFilaTabla' onClick={() => setAbrirDetallesReparacion(true)}>
                             <td>Nombre del Cliente</td>
                             <td className='nombreListaEqIngresados'>Modelo Equipo</td>
                             <td className='nombreListaEqIngresados' >Reparado</td>
                         </tr>
                     </table>
                 </div>
-                <VentanaDetallesEqIngresado isOpen={abrirDetallesEqIngresado} onClose={() => setAbrirDetallesEqIngresado(false)} />
+                <VentanaDetallesReparacion isOpen={abrirDetallesReparacion} onClose={() => setAbrirDetallesReparacion(false)} />
             </div>
     );
 }

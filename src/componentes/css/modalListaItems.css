@@ -1,0 +1,36 @@
+#formListaTipoItem{
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+    height: 60vh;
+    justify-content: space-around;
+    margin: 0 auto;
+    align-items: center;
+    font-family: var(--fuenteOrbitronMedium);
+    gap: 10%;
+}
+
+#formListaTipoItem > input{
+    font-family: var(--fuenteOrbitronRegular);
+    font-size: xx-large;
+    width: 90%;
+    border-radius: 6px;
+    padding-left: 3%;
+}
+
+#formListaTipoItem table{
+    text-align: center;
+    height: max-content;
+    margin: 0 auto;
+}
+
+#formListaTipoItem tr{
+    cursor: pointer;
+}
+
+#formListaTipoItem .auxTableRadius{
+    width: 90%;
+    border-radius: 12px;
+    background-color: blue;
+    overflow: hidden;
+}

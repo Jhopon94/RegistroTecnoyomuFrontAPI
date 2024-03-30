@@ -1,0 +1,36 @@
+#formCantidadItems{
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+    height: 60vh;
+    justify-content: space-around;
+    margin: 0 auto;
+    align-items: center;
+    font-family: var(--fuenteOrbitronMedium);
+}
+
+#formCantidadItems > textarea{
+    font-size: x-large;
+    width: 90%;
+    border-radius: 6px;
+}
+
+#formCantidadItems table{
+    text-align: center;
+    height: max-content;
+    margin: 0 auto;
+}
+
+#formCantidadItems tr{
+    cursor: pointer;
+}
+
+#formCantidadItems .auxTableRadius{
+    width: 90%;
+    font-size: xx-large;
+}
+#formCantidadItems input{
+    font-size: xx-large;
+    width: 15%;
+    text-align: center;
+}

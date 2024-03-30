@@ -1,0 +1,141 @@
+@import './global.css';
+
+#formDetallesReparacion{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--colorRojito);
+
+    display:  flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100vw;
+    align-items: center;
+
+    font-family: var(--fuenteOrbitronRegular);
+    font-size: x-large;
+
+    overflow: auto;
+}
+
+#tituloDetallesReparacion{
+    background-color: var(--colorAzulito);
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    color: white;
+    font-family: var(--fuenteOrbitronBold);
+    letter-spacing: 2px;
+    font-size: xx-large;
+}
+
+#tituloDetallesReparacion label{
+    margin-left: 4%;
+    margin-right: 4%;
+}
+
+.filaDosDetallesEqIngresado{
+    display: flex;
+    width: 92%;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    color: white;
+    font-family: var(--fuenteOrbitronMedium);
+    letter-spacing: 2px;
+}
+
+#filaTresDetallesReparacion{
+    display: flex;
+    flex-direction: column;
+    width: 92%;
+}
+
+#filaTresDetallesReparacion > *{
+    margin: 1.5vh auto;
+}
+#auxContBotonesDetallesReparacion{
+    width: 92%;
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+
+#formDetallesReparacion textarea{
+    width: 100%;
+    height: 20vh;
+    border: 2px solid black;
+    border-radius: 6px;
+    font-size: x-large;
+    letter-spacing: 0;
+}
+
+#formDetallesReparacion .etDetalles{
+    font-family: var(--fuenteOrbitronMedium);
+    width: 100%;
+    padding-top: 1.5%;
+}
+
+#formDetallesReparacion table{
+    width: 100%;
+    margin-top: 3%;
+    border-collapse: collapse;
+    border-radius: 6px;
+}
+
+#formDetallesReparacion table td{
+    padding-left: 3%;
+    border-left: 2px solid black;
+}
+#formDetallesReparacion table th{
+    background-color: var(--colorAzulito);
+}
+
+#formDetallesReparacion  .saldoPendiente{
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1%;
+    border-radius: 12px;
+}
+#btnImportadoMarcarEntregado{
+    margin-bottom: 10%;
+}
+#formDetallesReparacion .tdEliminarCamposTabla{
+    background-color: red;
+    border-right: 2px solid black;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+.filaDosDetallesEqIngresado select{
+    font-family: var(--fuenteOrbitronMedium);
+}
+
+#inputModeloEdicionEqIngresado{
+    font-family: var(--fuenteOrbitronRegular);
+    font-size: large;
+    min-width: 40vw;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 2%;
+    border-radius: 6px;
+}
+#inputAbonoRealizadoEdicionEqIngresado{
+    font-family: var(--fuenteOrbitronRegular);
+    font-size: large;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 2%;
+    border-radius: 6px;
+    width: 20vw;
+    height: fit-content;
+    font-size: x-large;
+}
+.filaDosDetallesEqIngresado .editEqIngresado{
+    display: flex;
+    flex-direction: row;
+}

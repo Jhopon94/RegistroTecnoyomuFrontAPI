@@ -1,0 +1,41 @@
+#formRangoFecha{
+    font-family: var(--fuenteOrbitronMedium);
+    font-size: x-large;
+}
+
+#formRangoFecha .titulo{
+    background-color: var(--colorAzulito);
+    margin: 0 0;
+    width: 100%;
+    display: block;
+    padding: 2% 0;
+    text-align: center;
+    color: white;
+    font-size: xx-large;
+}
+
+#formRangoFecha.modal{
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 6vh;
+    width: 50vw;
+}
+
+.desde, .hasta{
+    margin-left: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#formRangoFecha input{
+    font-family: var(--fuenteOrbitronMedium);
+    font-size: x-large;
+    width: 30%;
+    border-radius: 6px;
+    margin-right: 50%;
+}

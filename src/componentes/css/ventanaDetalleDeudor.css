@@ -1,0 +1,128 @@
+.variosDetallesDeudores{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0;
+}
+.variosDetallesDeudores .contBtn{
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--colorAzulito);
+    width: 100vw;
+    height: 12vh;
+    border-top: 4px solid black;
+}
+
+.variosDetallesDeudores .contModales{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+    padding-top: 1%;
+    overflow: hidden;
+    width: 100%;
+    height: 85vh;
+    overflow-y: auto;
+}
+.variosDetallesDeudores .modal{
+    width: 70%;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-family: var(--fuenteOrbitronMedium);
+    font-size: x-large;
+    min-height: 70vh; 
+    max-height: 150vh; /*Se anula el 80% del global*/
+    margin-top: 2%;
+}
+.variosDetallesDeudores .ultimaFila{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    background-color: var(--colorRojito);
+    border-radius: 12px;
+    padding: 0.2% 0;
+}
+.variosDetallesDeudores .ultimaFila .aux{
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    width: 50%;
+}
+.variosDetallesDeudores .ultimaFila .aux label{
+    display: flex;
+    font-size: xx-large;
+    align-items: center;
+    color: white;
+}
+.variosDetallesDeudores .ultimaFila .aux.Uno{
+    justify-content: right;
+    gap: 2%;
+    margin-right: 6%;
+}
+.variosDetallesDeudores .ultimaFila .aux.Dos{
+    gap: 7%;
+}
+.variosDetallesDeudores input{
+    border-radius: 6px;
+    font-family: var(--fuenteOrbitronMedium);
+    font-size: xx-large;
+    width: 50%;
+}
+.variosDetallesDeudores .checkBox{
+    width: 20px;
+}
+.variosDetallesDeudores .ultimaFila .aux button{
+    background-color: var(--colorAzulito);
+    border-radius: 12px;
+    height: 60px;
+    width: 60px;
+    cursor: pointer;
+    font-size: bolder;
+    color: white;
+}
+.clicOff:active{
+    box-shadow: none;
+}
+
+.variosDetallesDeudores .referencia{
+    color: var(--colorRojito);
+    width: 100%;
+    font-size: xx-large;
+}
+.variosDetallesDeudores table{
+    width: 100%;
+    border-collapse: collapse;
+    align-self: center;
+}
+.variosDetallesDeudores table th{
+    background-color: var(--colorAzulito);
+    color: white;
+    letter-spacing: 4px;
+    font-family: var(--fuenteOrbitronRegular);
+    /*padding: 0.5% 0;*/
+}
+.variosDetallesDeudores table td{
+    padding-left: 3%;
+    font-size: large;
+}
+.variosDetallesDeudores .etSaldoPendiente{
+    font-size: xx-large;
+}
+.variosDetallesDeudores .contTabla{
+    width: 90%;
+    max-height: 36vh;
+    overflow-y: auto;
+}
+.variosDetallesDeudores .contTabla tfoot{
+    background-color: var(--colorAzulito);
+    color: white;
+    letter-spacing: 3px;
+}

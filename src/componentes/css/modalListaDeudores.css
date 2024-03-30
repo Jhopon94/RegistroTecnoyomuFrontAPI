@@ -1,0 +1,30 @@
+#formListaDeudores{
+    font-family: var(--fuenteOrbitronRegular);
+    font-size: x-large;
+}
+
+
+#formListaDeudores.modal{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+    gap: 7vh;
+    width: 50vw;
+}
+#formListaDeudores table{
+    width: 100%;
+}
+
+#formListaDeudores table th{
+    background-color: var(--colorAzulito);
+    color: white;
+    letter-spacing: 3px;
+    padding: 1% 0;
+}
+#formListaDeudores table td{
+    padding: 0.5% 0;
+}
+#formListaDeudores table tr{
+    cursor: pointer;
+}
