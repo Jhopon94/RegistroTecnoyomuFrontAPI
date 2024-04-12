@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 
 function Administracion() {
 
-
     return (
         <div id="contenedorPrincipalAdmon">
             <Cabezal titulo="Administración" cerrarSesion={true} atras={false}/>
