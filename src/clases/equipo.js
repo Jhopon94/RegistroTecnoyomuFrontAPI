@@ -4,6 +4,7 @@ class ClaseEquipo {
         let id;
         let idCliente;
         let tipoIngreso;
+        let modelo;
         let condFisicasRecibidas;
         let daniosRecibidos;
         let partInterRecibidas;
