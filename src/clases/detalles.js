@@ -5,5 +5,6 @@ class ClaseDetalles {
         let idEquipo;
         let descripcion;
         let precio;
+        let fechaRegistro;
     }
 }

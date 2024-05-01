@@ -39,7 +39,7 @@ function ModalEditCliente({ isOpen, onClose}) {
             <div className="modal">
                 <div id='formEditCliente'>
                     <input readOnly={readOnly} id='nombreEditCliente' placeholder='Nombre Completo' className={clasesInput}></input>
-                    <input readOnly={readOnly} id='ccEditCliente' placeholder='Número de Cédula' className={clasesInput}></input>
+                    <input readOnly={true} id='ccEditCliente' placeholder='Número de Cédula' className='inputModalEditCliente noEditable'></input>
                     <input readOnly={readOnly} id='celuEditCliente' placeholder='Número de Celular' className={clasesInput}></input>
                     <input readOnly={readOnly} id='direccEditCliente' placeholder='Dirección de Residencia' className={clasesInput}></input>
                     <input readOnly={readOnly} id='correoEditCliente' placeholder='Correo Electrónico' className={clasesInput}></input>

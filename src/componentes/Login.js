@@ -7,7 +7,7 @@ const logo = <img alt='' id="logoLogin" src={logoImg}/>;
 const cajitaUsuario = <input id="cajitaUsuario" placeholder="Usuario"></input>;
 const cajitaPass = <input type="password" id="cajitaPass" placeholder="Contraseña"></input>;
 const btnEntrar = <button id="btnEntrar">Entrar</button>;
-const btnAnonimo = <button id="btnAnonimo">Registrar equipo como usuario anónimo</button>;
+//const btnAnonimo = <button id="btnAnonimo" >Registrar equipo como usuario anónimo</button>;
 
 function LogIn() {
     return (
@@ -25,7 +25,6 @@ function LogIn() {
                     {cajitaUsuario}
                     {cajitaPass}
                     {btnEntrar}
-                    {btnAnonimo}
                 </div>
                 <div id="contenedorLogo">
                     {logo}

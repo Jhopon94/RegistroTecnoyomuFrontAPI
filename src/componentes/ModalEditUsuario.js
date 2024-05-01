@@ -41,13 +41,7 @@ function ModalEditUsuario({ isOpen, onClose }) {
         <div className="modalTransparencia">
             <div className="modal">
                 <div id='formEditUsuario'>
-                    {estamosEditando ?
-                        <select id='celuRegUsuario' className={clasesInput}>
-                            <option value="opcionCeroEmpl" >Selecciona Empleado</option>
-                            <option value="empleado1" >Empleado Numero 1</option>
-                            <option value="empelado2" >Empleado Numero 2</option>
-                        </select> : <input readOnly={readOnly} id='celuEditUsuario' placeholder='Nombre del Empleado' className={clasesInput}></input>
-                    }
+                    <input readOnly={readOnly} id='correoEditUsuario' placeholder='Nombre de Usuario' className={clasesInput}></input>
                     {estamosEditando ?
                         <select id='direccRegUsuario' className={clasesInput}>
                             <option value="opcionCeroTipoUsu" >Selecciona Tipo de Usuario</option>
@@ -55,7 +49,7 @@ function ModalEditUsuario({ isOpen, onClose }) {
                             <option value="tipoUsu2" >Tipo de Usuario  2</option>
                         </select> : <input readOnly={readOnly} id='direccEditUsuario' placeholder='El Tipo de Usuario' className={clasesInput}></input>
                     }
-                    <input readOnly={readOnly} id='correoEditUsuario' placeholder='Asignar Contraseña' className={clasesInput}></input>
+                    <input readOnly={readOnly} id='correoEditUsuario' placeholder='Contraseña' className={clasesInput}></input>
                     <div className='contBotonesEditUsuario'>
                         <div className='btnEditUsuarioDiv'>
                             <BotonForm textoBoton="Registrar" classNameImportado={clasesBtnReg} disabledImportado={btnRegOff} />

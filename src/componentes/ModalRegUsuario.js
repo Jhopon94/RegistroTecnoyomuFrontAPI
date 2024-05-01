@@ -1,10 +1,12 @@
 import './css/modalRegUsuario.css';
 import BotonForm from './BotonForm';
+import ModalListaEmpleados from './ModalListaEmpleados';
 import { useState } from 'react';
 
 function ModalRegUsuario({ isOpen, onClose}) {
 
     const [clasesInputRegUsuario, setClasesInputRegUsuario] = useState('inputModalRegUsuario');
+    const [abrirListaEmple, setAbrirListaEmpl] = useState(false);
 
     if (!isOpen) return null;
 
@@ -14,18 +16,17 @@ function ModalRegUsuario({ isOpen, onClose}) {
         <div className="modalTransparencia">
             <div className="modal">
                 <div id='formRegUsuario'>
-                    <select id='celuRegUsuario' className={clasesInputRegUsuario}>
-                        <option value="opcionCeroEmpl" >Selecciona Empleado</option>
-                        <option value="empleado1" >Empleado Numero 1</option>
-                        <option value="empelado2" >Empleado Numero 2</option>
-                    </select>
+                    <button id='btnSelecEmpl' className={clasesInputRegUsuario + ' btnGuardar'} onClick={() => setAbrirListaEmpl(true)}>
+                        Seleccionar Empleado
+                    </button>
                     <select id='direccRegUsuario' className={clasesInputRegUsuario}>
                         <option value="opcionCeroTipoUsu" >Selecciona Tipo de Usuario</option>
                         <option value="tipoUsu1" >Tipo de Usuario 1</option>
                         <option value="tipoUsu2" >Tipo de Usuario  2</option>
                     </select>
+                    <input id='nombreUsuRegUsuario' placeholder='Nombre de Usuario sin Espacios' className={clasesInputRegUsuario}>
+                    </input>
                     <input id='correoRegUsuario' placeholder='Asignar Contraseña' className={clasesInputRegUsuario}>
-
                     </input>
                     <div id='contBotonesRegUsuario'>
                         <div id="btnRegistrarUsuDiv">
@@ -37,6 +38,7 @@ function ModalRegUsuario({ isOpen, onClose}) {
                     </div>
                 </div>
             </div>
+            <ModalListaEmpleados isOpen={abrirListaEmple} onClose={() => setAbrirListaEmpl(false)} vieneDeUsuarios={true}/>
         </div>
     );
 }

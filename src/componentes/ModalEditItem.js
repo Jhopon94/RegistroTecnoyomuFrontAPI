@@ -1,6 +1,7 @@
 import './css/modalEditItem.css';
 import BotonForm from './BotonForm';
 import ModalListaTipoItem from './ModalListaTipoItem';
+import ModalCantidadComprada from './ModalCantidadComprada';
 import { useState } from 'react';
 
 function ModalEditItem({ isOpen, onClose }) {
@@ -9,6 +10,7 @@ function ModalEditItem({ isOpen, onClose }) {
     const tipoItemBtn = <BotonForm onClickImportado={() => setAbrirListaTipos(true)} textoBoton='Cambiar Tipo' classNameImportado='btnAceptar' />
 
     const [abrirListaTipos, setAbrirListaTipos] = useState(false);
+    const [abrirVentanaCantidad, setAbrirVentanaCantidad] = useState(false);
 
     const [modoEdicion, setModoEdicion] = useState(false);
     const [classEdit, setClassEdit] = useState('btnEditar');
@@ -41,7 +43,8 @@ return (
             </div>
             <div className='tres'>
                 <label>Cantidad: </label>
-                <input disabled={!modoEdicion} type='number'/>
+                <input disabled={true} type='number'/>
+                <button className={classGuardar} disabled={!modoEdicion} onClick={() => setAbrirVentanaCantidad(true)}>+ Agregar Cantidad</button>
             </div>
             <div className='cuatro'>
                 <textarea placeholder='Aquí se visualiza la descripción...' disabled={!modoEdicion} ></textarea>
@@ -53,6 +56,7 @@ return (
             </div>
         </div>
         <ModalListaTipoItem vieneDeContabilidad={true} agregandoItem={true} isOpen={abrirListaTipos} onClose={() => setAbrirListaTipos(false)} />
+        <ModalCantidadComprada isOpen={abrirVentanaCantidad} onClose={() => setAbrirVentanaCantidad(false)}/>
     </div>
 
 );

@@ -3,8 +3,16 @@ import BotonForm from './BotonForm';
 import ModalEditEmpleado from './ModalEditEmpleado';
 import { useState } from 'react';
 
-function ModalListaEmpleados({ isOpen, onClose}) {
+function ModalListaEmpleados({ isOpen, onClose, vieneDeUsuarios}) {
     const [modalEditEmplOpen, setModalEditEmplOpen] = useState(false);
+
+    const decidirQueAbrir = () =>{
+        if(vieneDeUsuarios){
+            onClose();
+        }else{
+            setModalEditEmplOpen(true);
+        }
+    }
 
     if (!isOpen) return null;
 
@@ -23,7 +31,7 @@ function ModalListaEmpleados({ isOpen, onClose}) {
                         <option value="cargo">Cargo</option>
                     </select>
                     <table className='formListaEmplChilds' id="tablaListaEmpl">
-                        <tr className='editEmplFilaTabla' onClick={() => setModalEditEmplOpen(true)}>
+                        <tr className='editEmplFilaTabla' onClick={decidirQueAbrir}>
                             <td >Nombre de Empleado</td>
                             <td id='puntoEmpl'>*</td>
                         </tr>

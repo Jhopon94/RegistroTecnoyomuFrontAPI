@@ -28,7 +28,7 @@ function Empleados() {
             </div>
             <ModalRegEmpleado isOpen={modalRegEmpleadoOpen} onClose={() => setModalRegEmpleadoOpen(false)}>
             </ModalRegEmpleado>
-            <ModalListaEmpleados isOpen={modalListaEmpleadoOpen} onClose={() => setModalListaEmpleadoOpen(false)}>
+            <ModalListaEmpleados isOpen={modalListaEmpleadoOpen} onClose={() => setModalListaEmpleadoOpen(false)} vieneDeUsuarios={false}>
             </ModalListaEmpleados>
         </div>
     )

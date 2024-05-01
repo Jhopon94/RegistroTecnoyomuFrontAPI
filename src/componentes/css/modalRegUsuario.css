@@ -1,7 +1,7 @@
 .inputModalRegUsuario {
     font-family: var(--fuenteOrbitronRegular);
     width: 90%;
-    margin-top: 3vh;
+    margin-top: 0vh;
 }
 
 #formRegUsuario {
@@ -37,4 +37,8 @@
     text-align: center;
     font-size: xx-large;
     margin-bottom: 10vh;
+}
+#formRegUsuario #btnSelecEmpl{
+    margin-bottom: 6vh;
+    
 }

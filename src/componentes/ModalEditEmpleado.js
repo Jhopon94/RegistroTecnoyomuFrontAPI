@@ -11,6 +11,7 @@ function ModalEditEmpleado({ isOpen, onClose}) {
     const [clasesBtnFoto, setClasesBtnFoto] = useState('btnFoto clicOff');
     const [clasesBtnReg, setClasesBtnReg] = useState('btnRegistrar clicOff');
     const [clasesBtnEdit, setClasesBtnEdit] = useState('btnEditar');
+    const [clasesBtnInactivo, setClasesBtnInactivo] = useState('btnCancelar clicOff');
 
     const ActivarEditar = () => {
         setBtnDesactivado(false);
@@ -20,6 +21,7 @@ function ModalEditEmpleado({ isOpen, onClose}) {
         setClasesBtnEdit('btnEditar clicOff');
         setReadOnly(false);
         setClasesInput('inputModalEditEmpleado');
+        setClasesBtnInactivo('btnCancelar');
     }
 
     const PressCancelar = () => {
@@ -30,6 +32,7 @@ function ModalEditEmpleado({ isOpen, onClose}) {
         setClasesBtnEdit('btnEditar');
         setReadOnly(true);
         setClasesInput('inputModalEditEmpleado clicOff');
+        setClasesBtnInactivo('btnCancelar clicOff');
         onClose();
     }
 
@@ -42,7 +45,7 @@ function ModalEditEmpleado({ isOpen, onClose}) {
             <div className="modal">
                 <div id='formEditEmpleado'>
                     <input readOnly={readOnly} id='nombreEditEmpleado' placeholder='Nombre Completo' className={clasesInput}></input>
-                    <input readOnly={readOnly} id='ccEditEmpleado' placeholder='Número de Cédula' className={clasesInput}></input>
+                    <input readOnly={true} id='ccEditEmpleado' placeholder='Número de Cédula' className='inputModalEditEmpleado noEditable'></input>
                     <input readOnly={readOnly} id='cargoEditEmpleado' placeholder='Cargo' className={clasesInput}></input>
                     <input readOnly={readOnly} id='celuEditEmpleado' placeholder='Número de Celular' className={clasesInput}></input>
                     <input readOnly={readOnly} id='direccEditEmpleado' placeholder='Dirección de Residencia' className={clasesInput}></input>
@@ -58,7 +61,7 @@ function ModalEditEmpleado({ isOpen, onClose}) {
                             <BotonForm textoBoton="Cancelar" classNameImportado='btnCancelar' onClickImportado={PressCancelar} />
                         </div>
                         <div id="btnMarcarEditEmplpDiv">
-                            <BotonForm textoBoton="Inactivo" classNameImportado='btnCancelar' />
+                            <BotonForm textoBoton="Inactivo" classNameImportado={clasesBtnInactivo} />
                         </div>
                         <div id="btnEditarEditEmplpDiv">
                             <BotonForm textoBoton="Editar" classNameImportado={clasesBtnEdit}  disabledImportado={btnEditOff} onClickImportado={ActivarEditar}/>
