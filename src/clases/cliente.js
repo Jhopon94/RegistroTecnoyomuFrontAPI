@@ -1,12 +1,13 @@
 export default class ClaseCliente {
 
     constructor(){
-        let id;
-        let nombre;
-        let celular;
-        let correo;
-        let direccion;
-        let fechaRegistro;
-        let serviciosTomados;
+
+        this.id = null;
+        this.nombre = null;
+        this.celular = null;
+        this.correo = null;
+        this.direccion = null;
+        this.fechaRegistro = null;
+        this.serviciosTomados = null;
     }
 }

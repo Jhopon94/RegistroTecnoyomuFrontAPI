@@ -14,6 +14,7 @@
 
 #inputFiltroCli{
     grid-area: input;
+    text-align: center;
 }
 
 #selectFiltroCli{
@@ -41,12 +42,13 @@
     color: greenyellow;
 }
 #formListaClientes > table{
-    width: 90%;
-    overflow: scroll;
-    border-collapse: separate;
-}
-#formListaClientes > table > tr{
-    cursor: pointer;
+    display: block;
+    width: 98%;
+    height: 45vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-collapse: collapse;
+    table-layout: fixed;
 }
 
 #contBotonesListaCli{
@@ -56,4 +58,25 @@
     width: 100%;
     justify-content: space-around;
     align-items: center;
+}
+#tablaListaCli{
+    cursor: pointer;
+    text-align: center;
+}
+#tablaListaCli tr:nth-child(even){
+    background-color: lightgray;
+}
+#tablaListaCli tbody{
+    display: block;
+    width:100%;
+}
+
+#tablaListaCli tbody tr{
+    display: block;
+    width: 100%;
+    border: 0;
+}
+#tablaListaCli tbody td{
+    display: block;
+    width: 100%;
 }

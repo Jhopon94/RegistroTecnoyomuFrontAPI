@@ -10,5 +10,6 @@ class ClaseEmpleado {
         let fechaRegistro;
         let disponibleParaUsuario;
         let urlFoto;
+        let activo;
     }
 }
