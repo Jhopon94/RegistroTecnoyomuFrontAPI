@@ -37,11 +37,29 @@
 
 }
 
-#puntoEmpl{
-    color: greenyellow;
-}
 #formListaEmpleados > table{
+    display: block;
     width: 90%;
-    overflow: scroll;
+    height: 45vh;
+    text-align: center;
+    overflow-y: auto;
+    overflow-x: hidden;
     border-collapse: separate;
+    cursor: pointer;
+}
+#formListaEmpleados > table tbody{
+    display: block;
+    width: 100%;
+}
+#formListaEmpleados > table tr{
+    display: block;
+    width: 100%;
+    border: 0;
+}
+#formListaEmpleados > table td{
+    display: block;
+    width: 100%;
+}
+#formListaEmpleados > table tr:nth-child(even){
+    background-color: lightgray;
 }

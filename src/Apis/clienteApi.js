@@ -21,8 +21,6 @@ export async function BuscarClientes() {
         if (!respuestaGet.ok) {
             throw new Error('Error de fetch al obtener la lista de clientes');
         }
-
-
         //Convertimos a json el resultado y devolvemos
         let respuesta = await respuestaGet.json();
         //Creamos una lista para los clientes encontrados con el mismo tamaño de la lista obtenida
@@ -47,7 +45,8 @@ export async function BuscarClientes() {
         return listaClientes;
 
     } catch (error) {
-        console.log("Error al obtener lista de clientes!");
+        console.log("Error al obtener lista de clientes por API!");
+        alert("Error de Fetch");
         return null;
     }
 }
@@ -65,11 +64,13 @@ export async function GuardarCliente(objetoCliente) {
                 "Content-Type": 'application/json'
             }
         });
+        if(!respuestaCruda.ok) throw new Error('No se pudo obtener la lista de clientes, error de API!');
         let respuestaTexto = await respuestaCruda.text();
         console.log(respuestaTexto);
         alert(respuestaTexto);
     } catch (error) {
         console.log("Error de fetch al registrar al cliente!");
+        alert("Error de Fetch");
     }
 }
 
@@ -85,11 +86,12 @@ export async function EditarCliente(objetoCliente){
                 "Content-Type": 'application/json'
             }
         });
-
+        if(!respuestaCruda.ok) throw new Error('Error de API al editar cliente!');
         let respuestaTexto = await respuestaCruda.text();
         console.log(respuestaTexto.PromiseResult);
         alert(respuestaTexto);
     } catch (error) {
         console.log("Error de fetch al editar al cliente por: " + error);
+        alert("Error de Fetch");
     }
 }

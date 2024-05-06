@@ -1,15 +1,15 @@
-class ClaseEmpleado {
+export default class ClaseEmpleado {
 
     constructor(){
-        let id;
-        let nombre;
-        let cargo;
-        let celular;
-        let correo;
-        let direccion;
-        let fechaRegistro;
-        let disponibleParaUsuario;
-        let urlFoto;
-        let activo;
+        this.id = null;
+        this.nombre = null;
+        this.cargo = null;
+        this.celular = null;
+        this.correo = null;
+        this.direccion = null;
+        this.fechaRegistro = null;
+        this.disponibleParaUsuario = null;
+        this.foto = null;
+        this.activo = null;
     }
 }

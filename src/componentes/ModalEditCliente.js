@@ -65,8 +65,6 @@ function ModalEditCliente({ isOpen, onClose, objetoCliente }) {
 
     if (!isOpen) return null;
 
-    /*Recordar cambiar el div por form cuando vaya a hacerlo completo con API*/
-
     return (
         <div className="modalTransparencia">
             <div className="modal">

@@ -32,8 +32,6 @@ function ModalListaClientes({ isOpen, onClose, deDondeViene }) {
     const [cliente, setCliente] = useState(new ClaseCliente());
     //Variable para manejar el criterio de filtro de búsqueda
     const [buscarPor, setBuscarPor] = useState("nombre");
-    //Garantizar que la se haga el fetch de la lista solo cuando se abre por primera vez el modal
-    const primerRender = useRef(true);
 
     const ListarClientes = async () => {
         //Llenamos la lista completa para tenerla de reserva
@@ -51,12 +49,13 @@ function ModalListaClientes({ isOpen, onClose, deDondeViene }) {
 
 
     useEffect(() => {
-        //Si el modal está abierto Y es la priemea vez que se abre después de cerrado.
-        if (isOpen && primerRender.current) {
-            primerRender.current = false;
-            ListarClientes();
-        }
+        if (isOpen)   ListarClientes();
     }, [isOpen]);
+
+    //Volver a cargar lista al cerrar el edit
+    useEffect(() => {
+        if(isOpen && !modalEditCliOpen) ListarClientes();
+    }, [modalEditCliOpen]);
 
     //para abrir la ventana segun de donde venga la peticion de lista clientes
     const DeDondeViene = (objCliente) => {
@@ -70,10 +69,11 @@ function ModalListaClientes({ isOpen, onClose, deDondeViene }) {
     }
 
     const ManejarCerrar = () => {
-        //Reiniciar bandera de primer vez abierto
-        primerRender.current = true;
+        setBuscarPor("nombre");
         onClose();
     }
+
+    ///////////////////////// Sección Filtros /////////////////////////
 
     const ParamBusqueda = (e) => {
         let criterio = e.target.value;
@@ -118,6 +118,7 @@ function ModalListaClientes({ isOpen, onClose, deDondeViene }) {
         });
         setListaClientes(listaAux);
     }
+//////////////////////////////////////////////////////////////////////////
 
     if (!isOpen) return null;
 

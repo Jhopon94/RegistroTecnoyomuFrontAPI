@@ -41,10 +41,12 @@ function ModalRegCliente({ isOpen, onClose}) {
                         type='email' className={clasesInput} onChange={e => cliente.correo = e.target.value}></input>
                     <div id='contBotonesRegCliente'>
                         <div id="btnRegistrarClienteDiv">
-                            <BotonForm typeImportado='submit' textoBoton="Registrar" classNameImportado='btnRegistrar' />
+                            <BotonForm typeImportado='submit' textoBoton="Registrar" 
+                                classNameImportado='btnRegistrar' />
                         </div>
                         <div id="btnCancelRegClienteDiv">
-                            <BotonForm textoBoton="Cancelar" classNameImportado='btnCancelar' onClickImportado={ManejarOnClose} />
+                            <BotonForm textoBoton="Cancelar" classNameImportado='btnCancelar' 
+                                onClickImportado={ManejarOnClose} />
                         </div>
                     </div>
                 </form>

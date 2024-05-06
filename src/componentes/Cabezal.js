@@ -16,8 +16,8 @@ const Cabezal = ({ titulo, cerrarSesion, atras}) => {
     const etAtras = <label id="etAtras" onClick={() => window.history.back()}>Atrás</label>;
 
     const BtnAtrasSesion = () => {
-        if(auxCerrarSesion) return <etCerrarSesion/>;
-        if(auxAtras) return <etAtras/>;
+        if(auxCerrarSesion) return etCerrarSesion;
+        if(auxAtras) return etAtras;
     }
 
     return (
