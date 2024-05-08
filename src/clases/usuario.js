@@ -1,10 +1,10 @@
-class ClaseUsuario {
+export default class ClaseUsuario {
 
     constructor(){
-        let idEmpleado;
-        let nombreUsuario;
-        let contrasenia;
-        let rol;
-        let fechaRegistro;
+        this.idEmpleado = null;
+        this.nombreUsuario = null;
+        this.contrasenia = null;
+        this.rol = null;
+        this.fechaRegistro = null;
     }
 }

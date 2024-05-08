@@ -129,7 +129,7 @@ function ModalListaClientes({ isOpen, onClose, deDondeViene }) {
             <div className="modal">
                 <div id='formListaClientes'>
                     <input className='formListaCliChilds' id='inputFiltroCli'
-                        onChange={e => ParamBusqueda(e)}></input>
+                        onChange={e => ParamBusqueda(e)} placeholder='Buscar con selección...'></input>
                     <select name='filtrarListaCli' className='formListaCliChilds' id="selectFiltroCli"
                         onChange={e => setBuscarPor(e.target.value)}>
                         <option value="nombre">Nombre</option>

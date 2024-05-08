@@ -9,8 +9,9 @@ function ModalRegCliente({ isOpen, onClose}) {
     const clasesInput = 'inputModalRegCliente';
     const [cliente, setCliente] = useState(new ClaseCliente());
 
-    const RegistrarCliente = () => {
-        GuardarCliente(cliente);
+    const RegistrarCliente = async(e) => {
+        e.preventDefault();
+        await GuardarCliente(cliente);
         ManejarOnClose();
     }
 
@@ -25,7 +26,7 @@ function ModalRegCliente({ isOpen, onClose}) {
     return (
         <div className="modalTransparencia">
             <div className="modal">
-                <form id='formRegCliente' onSubmit={RegistrarCliente}> 
+                <form id='formRegCliente' onSubmit={e => RegistrarCliente(e)}> 
                     <input id='nombreRegCliente' name='nombreRegCliente' placeholder='Nombre Completo' 
                         className={clasesInput} onChange={e => cliente.nombre = e.target.value}
                         type='text' required></input>

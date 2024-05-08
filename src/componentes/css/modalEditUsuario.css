@@ -1,7 +1,7 @@
 .inputModalEditUsuario {
     font-family: var(--fuenteOrbitronRegular);
     width: 90%;
-    margin-top: 1vh;
+    margin-top: 0vh;
 }
 
 #formEditUsuario {
@@ -30,9 +30,16 @@
     border-radius: 12px;
     text-align: center;
     font-size: xx-large;
-    margin-bottom: 10vh;
+    margin-bottom: 6vh;
 }
 
 .noEditable{
     background-color: lightgrey;
+}
+#formEditUsuario h3{
+    font-family: var(--fuenteOrbitronRegular);
+}
+#formEditUsuario b{
+    font-size: x-large;
+    font-family: var(--fuenteOrbitronMedium);
 }

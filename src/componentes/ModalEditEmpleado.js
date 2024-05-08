@@ -79,13 +79,14 @@ function ModalEditEmpleado({ isOpen, onClose, objetoEmpleado }) {
         onClose();
     }
 
-    const ManejarSubmit = () => {
-        EditarEmpleado(empleadoEditado);
+    const ManejarSubmit = async (e) => {
+        e.preventDefault();
+        await EditarEmpleado(empleadoEditado);
         PressCancelar();
     }
 
-    const DesactivarEmpl = () => {
-        MarcarInactivo(empleadoEditado.id);
+    const DesactivarEmpl = async() => {
+        await MarcarInactivo(empleadoEditado.id);
         PressCancelar();
     }
 
@@ -94,7 +95,7 @@ function ModalEditEmpleado({ isOpen, onClose, objetoEmpleado }) {
     return (
         <div className="modalTransparencia">
             <div className="modal">
-                <form id='formEditEmpleado' onSubmit={ManejarSubmit}>
+                <form id='formEditEmpleado' onSubmit={e => ManejarSubmit(e)}>
                     <input readOnly={readOnly} id='nombreEditEmpleado' placeholder='Nombre Completo' 
                         value={inputNombre} className={clasesInput}
                         onChange={e => empleadoEditado.nombre = e.target.value} required></input>

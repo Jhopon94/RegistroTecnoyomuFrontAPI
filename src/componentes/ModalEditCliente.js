@@ -57,8 +57,9 @@ function ModalEditCliente({ isOpen, onClose, objetoCliente }) {
         onClose();
     }
 
-    const ManejarRegistrar = () => {
-        EditarCliente(clienteEditado);
+    const ManejarRegistrar = async (e) => {
+        e.preventDefault();
+        await EditarCliente(clienteEditado);
         PressCancelar();
     }
 
@@ -68,7 +69,7 @@ function ModalEditCliente({ isOpen, onClose, objetoCliente }) {
     return (
         <div className="modalTransparencia">
             <div className="modal">
-                <form id='formEditCliente' onSubmit={ManejarRegistrar}>
+                <form id='formEditCliente' onSubmit={e => ManejarRegistrar(e)}>
                     <input readOnly={readOnly} id='nombreEditCliente' value={inputNombre}
                         className={clasesInput} onChange={e => clienteEditado.nombre = e.target.value} 
                             type='text' placeholder='Nombre Completo' required></input>

@@ -8,10 +8,11 @@ function ModalRegEmpleado({ isOpen, onClose }) {
 
     const [empleado, setEmpleado] = useState(new ClaseEmpleado());
 
-    const ManejarSubmit = () => {
-            TemporalFoto();
-            GuardarEmpleado(empleado);
-            onClose();
+    const ManejarSubmit = async (e) => {
+        e.preventDefault();
+        TemporalFoto();
+        await GuardarEmpleado(empleado);
+        onClose();
     }
 
     const TemporalFoto = () => {
@@ -25,7 +26,7 @@ function ModalRegEmpleado({ isOpen, onClose }) {
     return (
         <div className="modalTransparencia">
             <div className="modal">
-                <form id='formRegEmpleado' onSubmit={ManejarSubmit}>
+                <form id='formRegEmpleado' onSubmit={e => ManejarSubmit(e)}>
                     <input id='nombreRegEmpleado' placeholder='Nombre Completo'
                         className='inputModalRegEmpleado' onChange={e => empleado.nombre = e.target.value}
                         type='text' required></input>
@@ -46,16 +47,16 @@ function ModalRegEmpleado({ isOpen, onClose }) {
                         type='email' required></input>
                     <div id='contBotonesRegEmpleado'>
                         <div id="btnFotoRegEmplDiv">
-                            <BotonForm textoBoton="Foto" classNameImportado='btnFoto' 
-                             typeImportado='button'/>
+                            <BotonForm textoBoton="Foto" classNameImportado='btnFoto'
+                                typeImportado='button' />
                         </div>
                         <div id="btnRegistrarEmpDiv">
                             <BotonForm textoBoton="Registrar" classNameImportado='btnRegistrar'
                                 typeImportado='submit' />
                         </div>
                         <div id="btnCancelRegEmpDiv">
-                            <BotonForm textoBoton="Cancelar" classNameImportado='btnCancelar' 
-                            onClickImportado={onClose}  typeImportado='button'/>
+                            <BotonForm textoBoton="Cancelar" classNameImportado='btnCancelar'
+                                onClickImportado={onClose} typeImportado='button' />
                         </div>
                     </div>
                 </form>

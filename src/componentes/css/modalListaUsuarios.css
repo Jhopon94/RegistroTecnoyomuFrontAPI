@@ -38,11 +38,28 @@
 }
 
 #formListaUsuarios > table{
+    display: block;
     width: 90%;
-    overflow: scroll;
+    height: 45vh;
+    overflow-y: auto;
+    overflow-x: hidden;
     border-collapse: separate;
     text-align: center;
-}
-#formListaUsuarios > table > tr{
     cursor: pointer;
+}
+#formListaUsuarios > table > tbody{
+    display: block;
+    width: 100%;
+}
+#formListaUsuarios > table td{
+    display: block;
+    width: 100%;
+}
+#formListaUsuarios > table tr{
+    display: block;
+    width: 100%;
+    border: 0;
+}
+#formListaUsuarios > table  tr:nth-child(even){
+    background-color: lightgray;
 }

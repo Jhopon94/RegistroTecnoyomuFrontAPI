@@ -2,6 +2,7 @@ import './css/administracion.css';
 import Cabezal from "./Cabezal";
 import BotonGeneral from "./BotonGeneral";
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 function Administracion() {
 

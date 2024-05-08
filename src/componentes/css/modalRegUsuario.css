@@ -42,3 +42,6 @@
     margin-bottom: 6vh;
     
 }
+#formRegUsuario #opcionNull{
+    background-color: lightgray;
+}

@@ -5,7 +5,7 @@ import ClaseEmpleado from '../clases/empleado';
 import { useEffect, useState, useRef } from 'react';
 import { BuscarEmpleados } from '../apis/empleadoApi';
 
-function ModalListaEmpleados({ isOpen, onClose, vieneDeUsuarios }) {
+function ModalListaEmpleados({ isOpen, onClose, vieneDeUsuarios, enviarEmpleado }) {
     const [modalEditEmplOpen, setModalEditEmplOpen] = useState(false);
 
 
@@ -17,15 +17,13 @@ function ModalListaEmpleados({ isOpen, onClose, vieneDeUsuarios }) {
     const [empleadoSelecc, setEmpleadoSelecc] = useState(new ClaseEmpleado());
     //Variable para manejar el criterio de filtro de búsqueda
     const [buscarPor, setBuscarPor] = useState("nombre");
-    //Identificar si la ventana está encima para refrescar la lista con el fetch
-    const [vistaEncima, setVistaEncima] = useState(isOpen);
 
     const decidirQueAbrir = (objetoEmpleado) => {
         setEmpleadoSelecc(objetoEmpleado);
         if (vieneDeUsuarios) {
+            enviarEmpleado(objetoEmpleado);
             onClose();
         } else {
-            setVistaEncima(false);
             setModalEditEmplOpen(true);
         }
     }
@@ -110,7 +108,7 @@ function ModalListaEmpleados({ isOpen, onClose, vieneDeUsuarios }) {
             <div className="modal">
                 <div id='formListaEmpleados'>
                     <input className='formListaEmplChilds' id='inputFiltroEmpl'
-                        onChange={e => ParamBusqueda(e)}></input>
+                        onChange={e => ParamBusqueda(e)} placeholder='Buscar con selección...'></input>
                     <select name='filtrarListaEmpl' className='formListaEmplChilds' id="selectFiltroEmpl"
                             onChange={e => setBuscarPor(e.target.value)}>
                         <option value="nombre">Nombre</option>
