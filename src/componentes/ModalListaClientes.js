@@ -153,9 +153,11 @@ function ModalListaClientes({ isOpen, onClose, deDondeViene }) {
                     </div>
                 </div>
             </div>
-            <ModalEditCliente isOpen={modalEditCliOpen} onClose={() => setModalEditCliOpen(false)} objetoCliente={cliente} />
+            <ModalEditCliente isOpen={modalEditCliOpen} onClose={() => setModalEditCliOpen(false)} 
+                objetoCliente={cliente} />
             <ModalRegCliente isOpen={abrirModalRegCliente} onClose={() => setAbrirModalRegCliente(false)} />
-            <VentanaIngresoEquipo isOpen={modalIngEquipoOpen} onClose={() => setModalIngEquipoOpen(false)} />
+            <VentanaIngresoEquipo isOpen={modalIngEquipoOpen} onClose={() => setModalIngEquipoOpen(false)} 
+            objetoCliente={cliente}/>
         </div>
     );
 }

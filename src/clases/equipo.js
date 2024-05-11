@@ -1,18 +1,18 @@
-class ClaseEquipo {
+export default class ClaseEquipo {
 
     constructor(){
-        let id;
-        let idCliente;
-        let tipoIngreso;
-        let modelo;
-        let condFisicasRecibidas;
-        let daniosRecibidos;
-        let partInterRecibidas;
-        let precioTotal;
-        let estadoEquipo;
-        let saldoPendiente;
-        let fechaIngreso;
-        let fechaSalida;
-        let diasGarantia;
+        this.id = null;
+        this.idCliente = null;
+        this.tipoIngreso = 'servicioNormal';
+        this.modelo = null;
+        this.condFisicasRecibidas = null;
+        this.daniosRecibido = null;     
+        this.partInterRecibidas = null;
+        this.precioTotal = null;
+        this.estadoEquipo = null;
+        this.saldoPendiente = null;
+        this.fechaIngreso = null;
+        this.fechaSalida = null;
+        this.diasGarantia = null;
     }
 }

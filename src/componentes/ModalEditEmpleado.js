@@ -128,11 +128,13 @@ function ModalEditEmpleado({ isOpen, onClose, objetoEmpleado }) {
                         </div>
                         <div id="btnMarcarEditEmplpDiv">
                             <BotonForm textoBoton={textoBtnEstadoEmpl} classNameImportado={clasesBtnEstadoEmpl} 
-                                disabledImportado={btnDesactivado} onClickImportado={DesactivarEmpl}/>
+                                disabledImportado={btnDesactivado} onClickImportado={DesactivarEmpl}
+                                typeImportado={'button'}/>
                         </div>
                         <div id="btnEditarEditEmplpDiv">
                             <BotonForm textoBoton="Editar" classNameImportado={clasesBtnEdit} 
-                                disabledImportado={btnEditOff} onClickImportado={ActivarEditar} />
+                                disabledImportado={btnEditOff} onClickImportado={ActivarEditar} 
+                                typeImportado={'button'}/>
                         </div>
                     </div>
                 </form>
