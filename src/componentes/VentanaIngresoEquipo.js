@@ -821,7 +821,10 @@ function VentanaIngresoEquipo({ isOpen, onClose, objetoCliente }) {
         } else {
             daniosAux.office = daniosDefault.office;
         }
-        console.log(daniosAux);
+        const objetoJson = JSON.stringify(daniosAux, null, 2);
+        const objetoString = objetoJson.toString();
+        setTextoDanios(objetoString);
+        console.log(equipo);
     }
 
     const ManejarCancelar = () => {
