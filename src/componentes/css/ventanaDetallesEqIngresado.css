@@ -139,3 +139,14 @@
     display: flex;
     flex-direction: row;
 }
+#formDetallesEqIngresado textarea{
+    height: 45vh;
+    width: 90%;
+    resize: none;
+}
+#formDetallesEqIngresado tr .columnaPrecio{
+    text-align: left;
+}
+#formDetallesEqIngresado tr .columnaDetalles{
+    text-align: center;
+}

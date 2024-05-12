@@ -139,6 +139,7 @@ function ModalListaClientes({ isOpen, onClose, deDondeViene }) {
                     <table className='formListaCliChilds' id="tablaListaCli">
                         <tbody>
                             {
+                                listaClientes == null ? <tr></tr> : 
                                 listaClientes.map(cliente => (
                                     <tr key={cliente.id} onClick={() => DeDondeViene(cliente)}>
                                         <td>{cliente.nombre}</td>

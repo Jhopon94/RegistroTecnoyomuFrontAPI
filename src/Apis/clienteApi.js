@@ -45,7 +45,7 @@ export async function BuscarClientes() {
         return listaClientes;
 
     } catch (error) {
-        console.log("Error al obtener lista de clientes por: " , error);
+        console.error("Error al obtener lista de clientes por: " , error);
         alert("Error de Fetch");
         return null;
     }

@@ -43,13 +43,26 @@
     color: greenyellow;
 }
 #formListaEqIngresados > table{
+    display: block;
     width: 95%;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 45vh;
     border-collapse: separate;
     font-size: x-large;
 }
-#formListaEqIngresados > table > tr{
+#formListaEqIngresados > table tbody{
+    display: block;
+    width: 100%;
+}
+#formListaEqIngresados > table tr{
     cursor: pointer;
+    width: 100%;
+    border: 0;
+}
+#formListaEqIngresados > table td{
+    text-align: center;
+    width: 50%;
 }
 
 #contBotonesListaEqIngresados{
@@ -61,7 +74,10 @@
     align-items: center;
 }
 
-#formListaEqIngresados td{
-    border-left: 2px solid red;
-    padding-left: 2%;
+  #formListaEqIngresados #tituloTabla{
+    background-color:var(--colorAzulito);
+    color: white;
+  }
+  #formListaEqIngresados > table tr:nth-child(even){
+    background-color: lightgray;
   }
