@@ -13,7 +13,7 @@ export async function BuscarUsuarios() {
         let respJson = await respCruda.json();
         return respJson;
     } catch (error) {
-        console.log("Error de fetch por: " + error);
+        console.log("Error de fetch por: " , error);
         alert("Error de Fetch");
         return null;
     }
@@ -33,7 +33,7 @@ export async function EditarUsuario(objetoUsuario) {
         let respTexto = await respCruda.text();
         alert(respTexto);
     } catch (error) {
-        console.log("Error de fetch al editar al usaurio por: " + error);
+        console.log("Error de fetch al editar al usaurio por: " , error);
         alert("Error de Fetch");
     }
 }
@@ -52,7 +52,7 @@ export async function GuardarUsuario(objetoUsuario) {
         let respTexto = await respCruda.text();
         alert(respTexto);
     } catch (error) {
-        console.log("Error de fetch al registrar el usuario por: " + error);
+        console.log("Error de fetch al registrar el usuario por: " , error);
     }
 }
 
@@ -70,7 +70,7 @@ export async function EliminarUsuario(idEmpleado){
         let respTexto = await respCruda.text();
         alert(respTexto);
     } catch (error) {
-        console.log("Error de Fecth al eliminar el usaurio por: " + error);
+        console.log("Error de Fecth al eliminar el usaurio por: " , error);
         alert("Error de Fetch");
     }
 }

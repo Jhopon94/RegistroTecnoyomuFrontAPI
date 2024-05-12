@@ -45,7 +45,7 @@ export async function BuscarClientes() {
         return listaClientes;
 
     } catch (error) {
-        console.log("Error al obtener lista de clientes por API!");
+        console.log("Error al obtener lista de clientes por: " , error);
         alert("Error de Fetch");
         return null;
     }
@@ -69,7 +69,7 @@ export async function GuardarCliente(objetoCliente) {
         console.log(respuestaTexto);
         alert(respuestaTexto);
     } catch (error) {
-        console.log("Error de fetch al registrar al cliente!");
+        console.log("Error de fetch al registrar al cliente por: " , error);
         alert("Error de Fetch");
     }
 }
@@ -91,7 +91,7 @@ export async function EditarCliente(objetoCliente){
         console.log(respuestaTexto.PromiseResult);
         alert(respuestaTexto);
     } catch (error) {
-        console.log("Error de fetch al editar al cliente por: " + error);
+        console.log("Error de fetch al editar al cliente por: " , error);
         alert("Error de Fetch");
     }
 }

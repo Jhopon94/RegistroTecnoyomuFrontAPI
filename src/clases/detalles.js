@@ -1,10 +1,10 @@
-class ClaseDetalles {
+export default class ClaseDetalles {
 
     constructor(){
-        let id;
-        let idEquipo;
-        let descripcion;
-        let precio;
-        let fechaRegistro;
+        this.id = null;
+        this.idEquipo = null;
+        this.descripcion = null;
+        this.precio = null;
+        this.fechaRegistro = null;
     }
 }

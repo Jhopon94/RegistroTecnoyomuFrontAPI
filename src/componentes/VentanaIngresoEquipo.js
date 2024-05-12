@@ -73,7 +73,7 @@ function VentanaIngresoEquipo({ isOpen, onClose, objetoCliente }) {
     //Texto para acomodar los danios
     const [textoDanios, setTextoDanios] = useState('');
     //Poner los daños recibidos por default en el objeto equipo
-    equipo.daniosRecibido = textoDanios;
+    equipo.condicionesFisicasRecibidas = textoDanios;
     //Se pode idCliente en el equipo
     equipo.idCliente = objetoCliente.id;
 
@@ -159,14 +159,12 @@ function VentanaIngresoEquipo({ isOpen, onClose, objetoCliente }) {
             }
             setDaniosPantalla(auxDaniosObj);
         }
-        console.log(daniosPantalla);
     }
 
     //////////////////// Checks Pantalla /////////////////
     const [checkRayones, setCheckRayones] = useState(false);
     const CheckRayonesEvento = (event) => {
         let bandera = event.target.checked;
-        console.log("rayones es: " + bandera);
         setCheckRayones(bandera);
         setInputsPantallaRayonesOff(!bandera);
         //SI desmarco
@@ -231,7 +229,6 @@ function VentanaIngresoEquipo({ isOpen, onClose, objetoCliente }) {
             }
             setDaniosPuertos(auxDaniosObj);
         }
-        console.log(daniosPuertos);
     }
 
     //////////////////// Checks Puertos /////////////////////////
@@ -572,6 +569,7 @@ function VentanaIngresoEquipo({ isOpen, onClose, objetoCliente }) {
             listaSettersChecksWin.forEach(setCheck => {
                 setCheck(false);
             });
+            setDaniosWin('');
         }
     }
 
@@ -602,6 +600,7 @@ function VentanaIngresoEquipo({ isOpen, onClose, objetoCliente }) {
             listaSettersChecksOffice.forEach(setCheck => {
                 setCheck(false);
             });
+            setDaniosOffice('');
         }
     }
 
@@ -693,7 +692,7 @@ function VentanaIngresoEquipo({ isOpen, onClose, objetoCliente }) {
     /////////////////////////////////////////////////////////////
 
     /////////////// VALIDACIONES Y ENVIAR DATOS A LA SIGUIENTE VISTA ///////////////////
-    const SiguienteVista = () => {
+    const ManjenarContinuar = () => {
 
         if (checkPantalla) {
             //Verificar que todos los campos estén vacíos para poner el mensaje por default
@@ -824,14 +823,31 @@ function VentanaIngresoEquipo({ isOpen, onClose, objetoCliente }) {
         const objetoJson = JSON.stringify(daniosAux, null, 2);
         const objetoString = objetoJson.toString();
         setTextoDanios(objetoString);
-        console.log(equipo);
+        AbrirSiguienteVentana();
+    }
+
+    const AbrirSiguienteVentana = () => {
+        setAbrirModalPartes(true);
     }
 
     const ManejarCancelar = () => {
+        setCheckPantalla(false);
+        setCheckPuertos(false);
+        setCheckParlantes(false);
+        setCheckBateria(false);
+        setCheckEnergia(false);
+        setCheckVentiladores(false);
+        setCheckBluetooth(false);
+        setCheckWifi(false);
+        setCheckTeclado(false);
+        setCheckTouchpad(false);
+        setCheckOffice(false);
+        setCheckWindows(false);
+        setCheckOtros(false);
         onClose();
     }
 
-    //cambiar div por form al hacer la app completa!!!
+
 
     if (!isOpen) return null;
     return (
@@ -1219,12 +1235,13 @@ function VentanaIngresoEquipo({ isOpen, onClose, objetoCliente }) {
                 </section>
                 <div id='contBotonesIngEq'>
                     <BotonForm textoBoton="Continuar" classNameImportado="btnContinuar"
-                        onClickImportado={SiguienteVista} />
+                        onClickImportado={ManjenarContinuar} />
                     <BotonForm textoBoton="Cancelar" classNameImportado="btnCancelar"
                         onClickImportado={ManejarCancelar} />
                 </div>
             </div>
-            <PartesEquipoIngreso isOpen={abrirModalPartes} onClose={() => setAbrirModalPartes(false)} />
+            <PartesEquipoIngreso isOpen={abrirModalPartes} onClose={() => setAbrirModalPartes(false)} 
+            objetoEquipo={equipo} nombreCiente={objetoCliente.nombre}/>
         </div>
     );
 }

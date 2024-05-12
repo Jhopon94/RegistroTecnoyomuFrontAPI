@@ -32,7 +32,7 @@ export async function BuscarEmpleados() {
         });
         return listaEmpleados;
     } catch (error) {
-        console.log('Error de Fetch al obtener la lista de empleados por: ' + error);
+        console.log('Error de Fetch al obtener la lista de empleados por: ' , error);
         alert('Error de Fetch');
         return null;
     }
@@ -73,7 +73,7 @@ export async function MarcarInactivo(cedula) {
         let respuestaTexto = await respuestaCruda.text();
         alert(respuestaTexto);
     } catch (error) {
-        console.log("Error de fetch al desactivar empleado por: " + error);
+        console.log("Error de fetch al desactivar empleado por: " , error);
         alert("Error de fetch");
     }
 }
@@ -92,6 +92,6 @@ export async function EditarEmpleado(objetoEmpleado) {
         let respuestaTexto = await respuestaCruda.text();
         alert(respuestaTexto);
     } catch (e) {
-        console.log("Error de Fetch al editar empleado por: " + e);
+        console.log("Error de Fetch al editar empleado por: " , e);
     }
 }

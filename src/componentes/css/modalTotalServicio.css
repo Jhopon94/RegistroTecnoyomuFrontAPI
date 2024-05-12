@@ -42,3 +42,6 @@
     margin-bottom: 5%;
 
 }
+#formTotalIngEq input{
+    text-align: right;
+}
