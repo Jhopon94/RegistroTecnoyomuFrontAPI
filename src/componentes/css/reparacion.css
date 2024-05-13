@@ -4,8 +4,8 @@
 #contenedorPrincipalReparacion{
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 25vh auto;
-    gap: 4%;
+    grid-template-rows: 25vh 70vh;
+    gap: 2%;
 }
 
 tr, th, thead, table{
@@ -37,9 +37,11 @@ thead{
 
 #contenedorPrincipalReparacion .aux{
     display: flex;
-    margin: 0 auto;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    margin-top: 3%;
+    margin-top: 1%;
+    height:100%;
+}
+#contenedorPrincipalReparacion table{
 }

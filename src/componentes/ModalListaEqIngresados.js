@@ -86,7 +86,7 @@ function ModalListaEqIngresados({ isOpen, onClose }) {
     </select>;
 
     const inputFiltro = <input className='formListaCliChilds' id='inputFiltroEqIngresados'
-        onChange={e => ParamBusqueda(e)}></input>;
+        onChange={e => ParamBusqueda(e)} placeholder='Buscar...'></input>;
 
 
     const VerificarFiltroPorEstado = (event) => {
@@ -173,11 +173,12 @@ function ModalListaEqIngresados({ isOpen, onClose }) {
                             <tr className='editCliFilaTabla' id='tituloTabla'>
                                 <td className='nombreListaEqIngresados'>Cédula del Cliente</td>
                                 <td className='nombreListaEqIngresados'>Modelo Equipo</td>
-                                <td className='nombreListaEqIngresados' >Reparado</td>
+                                <td className='nombreListaEqIngresados' >Estado</td>
                             </tr>
                             {
-                                listaEquipos.map(equipo => (
-                                    <tr onClick={() => SeleccionarEquipo(equipo)}>
+                                listaEquipos === null ? <tr></tr> :
+                                listaEquipos.map((equipo, index) => (
+                                    <tr onClick={() => SeleccionarEquipo(equipo)} key={index}>
                                         <td>{equipo.idCliente}</td>
                                         <td>{equipo.modelo}</td>
                                         <td>{equipo.estadoEquipo}</td>

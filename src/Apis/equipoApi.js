@@ -80,3 +80,22 @@ export async function EditarEquipoIngresado(equipoYDetalles){
         return "Error de Fetch al editar el equipo!";
     }
 }
+
+export async function MarcarEntregado(objeto){
+    console.log("Vamos a marcar el equipo como entregado! ");
+    try {
+        let respCruda = await fetch(url, {
+            "method": 'PUT',
+            "body": JSON.stringify(objeto),
+            "headers": {
+                "Content-Type": 'application/json'
+            }
+        });
+        if(!respCruda.ok)throw new Error('Error de API al marcar como entregado');
+        let respTexto = await respCruda.text();
+        return respTexto;
+    } catch (error) {
+        console.log("Error de fetch al marcar como entregado por: ", error);
+        return null;
+    }
+}

@@ -90,8 +90,7 @@ function ModalListaUsuarios({ isOpen, onClose }) {
     }
 
     const ManejarCerrar = () => {
-        setBuscarPor("nombreUsuario");
-        onClose();
+        window.location.reload();
     }
 
     if (!isOpen) return null;
@@ -111,6 +110,7 @@ function ModalListaUsuarios({ isOpen, onClose }) {
                     <table className='formListaUsuChilds' id="tablaListaUsu">
                         <tbody>
                             {
+                                listaUsuarios === null ? <tr></tr> :
                                 listaUsuarios.map(usuario => (
                                     <tr key={usuario.idEmpleado} onClick={() => AbrirModalEditUsuario(usuario)}>
                                         <td>{usuario.nombreUsuario}</td>

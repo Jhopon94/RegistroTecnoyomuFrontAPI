@@ -150,3 +150,7 @@
 #formDetallesEqIngresado tr .columnaDetalles{
     text-align: center;
 }
+#formDetallesEqIngresado table >tbody > tr .precioTotal{
+    text-align: right;
+    padding-right: 3%;
+}

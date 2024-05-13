@@ -4,6 +4,7 @@ import ModalEditEmpleado from './ModalEditEmpleado';
 import ClaseEmpleado from '../clases/empleado';
 import { useEffect, useState, useRef } from 'react';
 import { BuscarEmpleados } from '../apis/empleadoApi';
+import ListaFiltrada from './FiltroBusqueda';
 
 function ModalListaEmpleados({ isOpen, onClose, vieneDeUsuarios, enviarEmpleado }) {
     const [modalEditEmplOpen, setModalEditEmplOpen] = useState(false);
@@ -16,7 +17,7 @@ function ModalListaEmpleados({ isOpen, onClose, vieneDeUsuarios, enviarEmpleado 
     //Variable Empleado para enviar a la edicióno a equipo a agregar
     const [empleadoSelecc, setEmpleadoSelecc] = useState(new ClaseEmpleado());
     //Variable para manejar el criterio de filtro de búsqueda
-    const [buscarPor, setBuscarPor] = useState("nombre");
+    const [buscarPor, setBuscarPor] = useState("nombreEmpleado");
 
     const decidirQueAbrir = (objetoEmpleado) => {
         setEmpleadoSelecc(objetoEmpleado);
@@ -50,74 +51,33 @@ function ModalListaEmpleados({ isOpen, onClose, vieneDeUsuarios, enviarEmpleado 
 
     ///////////// Sección Filtros /////////////////////////////
 
-    const ParamBusqueda = (e) => {
-        let criterio = e.target.value;
-        if (buscarPor === 'nombre') FiltrarNombre(criterio);
-         if(buscarPor === 'cedula')FiltrarCedula(criterio);
-         if(buscarPor === 'cargo')FiltrarCargo(criterio);
-    }
-
-    const FiltrarNombre = (texto) => {
-        let listaAux = [];
-        //Contruir el parámetro regx / texto / i
-        const textoRegx = new RegExp(texto, 'i');
-        listaEmpleadosCompleta.forEach(empleado => {
-            if (empleado.nombre.match(textoRegx)) {
-                listaAux.push(empleado);
-            }
-        });
-        setListaEmpleados(listaAux);
-    }
-
-    const FiltrarCedula = (texto) => {
-        let listaAux = [];
-        //Contruir el parámetro regx / texto / i
-        const textoRegx = new RegExp(texto, 'i');
-        listaEmpleadosCompleta.forEach(empleado => {
-            if (empleado.id.toString().match(textoRegx)) {
-                listaAux.push(empleado);
-            }
-        });
-        setListaEmpleados(listaAux);
-    }
-
-    const FiltrarCargo = (texto) => {
-        let listaAux = [];
-        //Contruir el parámetro regx / texto / i
-        const textoRegx = new RegExp(texto, 'i');
-        listaEmpleadosCompleta.forEach(empleado => {
-            if (empleado.cargo.match(textoRegx)) {
-                listaAux.push(empleado);
-            }
-        });
-        setListaEmpleados(listaAux);
+    const FiltrarLista = (criterio) => {
+        setListaEmpleados(ListaFiltrada(buscarPor, listaEmpleadosCompleta, criterio))
     }
     //////////////////////////////////////////////////////////////
 
     const ManejarOnClose = () => {
-        setBuscarPor("nombre");
-        onClose();
+        window.location.reload();
     }
 
     if (!isOpen) return null;
-
-    /*Recordar cambiar el div por form cuando vaya a hacerlo completo con API*/
 
     return (
         <div className="modalTransparencia">
             <div className="modal">
                 <div id='formListaEmpleados'>
                     <input className='formListaEmplChilds' id='inputFiltroEmpl'
-                        onChange={e => ParamBusqueda(e)} placeholder='Buscar con selección...'></input>
+                        onChange={e => FiltrarLista(e.target.value)} placeholder='Buscar...'></input>
                     <select name='filtrarListaEmpl' className='formListaEmplChilds' id="selectFiltroEmpl"
                             onChange={e => setBuscarPor(e.target.value)}>
-                        <option value="nombre">Nombre</option>
-                        <option value="cedula">Cédula</option>
-                        <option value="cargo">Cargo</option>
+                        <option value="nombreEmpleado">Nombre</option>
+                        <option value="cedulaEmpleado">Cédula</option>
+                        <option value="cargoEmpleado">Cargo</option>
                     </select>
                     <table className='formListaEmplChilds' id="tablaListaEmpl">
                         <tbody>
                             {
+                                listaEmpleados === null ? <tr></tr> :
                                 listaEmpleados.map(empleado => (
                                     <tr key={empleado.id} onClick={() => decidirQueAbrir(empleado)}>
                                         <td>{empleado.nombre}</td>

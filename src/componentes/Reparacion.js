@@ -7,7 +7,7 @@ const Reparacion = () =>{
         <div id="contenedorPrincipalReparacion">
             <Cabezal titulo="Reparación" cerrarSesion={true}  atras={false}/>
             <div className='aux'>
-            <TablaReparacion/>
+            <TablaReparacion isOpen={true}/>
             </div>
         </div>
     )

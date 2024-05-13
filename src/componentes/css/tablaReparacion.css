@@ -1,0 +1,23 @@
+.contListaEquIngReparacion #formListaEqIngresados{
+    height: 55vh;
+}
+
+#formListaEqIngresados table{
+    display: block;
+    height: 15vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.contListaEquIngReparacion table tbody{
+    width: 100%;
+}
+.contListaEquIngReparacion table tbody tr{
+    width: 100%;
+}
+.contListaEquIngReparacion table tbody th{
+    width: fit-content;
+}
+.contListaEquIngReparacion table tbody td{
+    width: fit-content;
+}

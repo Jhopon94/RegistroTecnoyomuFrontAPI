@@ -26,6 +26,8 @@ function VentanaDetallesEqIngresado({ isOpen, onClose, equipo, cliente }) {
     const [ingresoPor, setIngresoPor] = useState("");
     const [estadoEquipo, setEstadoEquipo] = useState("");
     const [modelo, setModelo] = useState("");
+    const [objMarcarEntregado, setObjMarcarEntregado] = useState(null);
+
 
     //Apenas se abre
     useEffect(() => {
@@ -82,8 +84,12 @@ function VentanaDetallesEqIngresado({ isOpen, onClose, equipo, cliente }) {
 
     //Editar desactivado
     const etIngresoPor = <label>Ingreso por: <u>{tipoIngreso}</u></label>;
-    const etRefMarca = <label>{equipo.modelo}</label>;
-    const etEstado = <label>Estado: <u>{equipo.estadoEquipo}</u></label>;
+    const etRefMarca = <label>
+        {equipo.modelo === null || equipo.modelo === undefined ? 'Modelo Indefinido' : equipo.modelo}
+    </label>;
+    const etEstado = <label>
+        Estado: <u>{equipo.estadoEquipo === null || equipo.estadoEquipo === undefined ? 'Estado Indefinido' : equipo.estadoEquipo}</u>
+    </label>;
     const etSaldo = <label className='saldoPendiente'>Saldo Pendiente: $ {saldoPend}</label>;
 
     //Editar Activado
@@ -121,9 +127,9 @@ function VentanaDetallesEqIngresado({ isOpen, onClose, equipo, cliente }) {
                     "equipo": equipo
                 },
                 "listasDetalles": {
-                    "eliminados":[],
-                    "nuevos":[],
-                    "editados":[]
+                    "eliminados": [],
+                    "nuevos": [],
+                    "editados": []
                 }
             }
             //Mandar a editar
@@ -133,13 +139,35 @@ function VentanaDetallesEqIngresado({ isOpen, onClose, equipo, cliente }) {
         }
     }
 
+    //Al amrcar como entregado
+    const MarcarEntregado = () => {
+        if (equipo !== null || equipo !== undefined) {
+            //Formar objeto
+            let obAux = {
+                "marcarEntregado": {
+                    "diasGarantia": 0,
+                    "id": equipo.id
+                }
+            }
+            setObjMarcarEntregado(obAux);
+        } else {
+            alert('Equipo no válido.');
+        }
+    }
+    //...Y cuando acabe de setearse el objeto
+    useEffect(() => {
+        if(isOpen) setAbrirEstablecerGarantia(true);
+    }, [objMarcarEntregado]);
+
 
     if (!isOpen) return null;
     return (
-        <form id="formDetallesEqIngresado" onSubmit={e => ManejarSubmit(e)}>
+        <div><form id="formDetallesEqIngresado" onSubmit={e => ManejarSubmit(e)}>
 
             <div id='tituloDetallesEqIngresado'>
-                <label>{cliente.nombre}</label>
+                <label>
+                    {cliente.nombre === null || cliente.nombre === undefined ? 'Nombre Indefinido' : cliente.nombre}
+                </label>
                 <label>Fecha: {fechaEquipo}</label>
             </div>
 
@@ -199,12 +227,19 @@ function VentanaDetallesEqIngresado({ isOpen, onClose, equipo, cliente }) {
                             </tr>
                             {
                                 listaDetalles === null ? <tr></tr> :
-                                    listaDetalles.map(detalle => (
-                                        <tr>
+                                    listaDetalles.map((detalle, index) => (
+                                        <tr key={index}>
                                             <td className='columnaDetalles'>{detalle.descripcion}</td>
                                             <td className='columnaPrecio'>$ {FormatearNumero(detalle.precio)}</td>
                                         </tr>
                                     ))
+                            }
+                            {
+                                listaDetalles === null ? <tfoot></tfoot> :
+                                    <tr>
+                                        <td className='precioTotal'><b>Total: </b></td>
+                                        <td ><b>$ {FormatearNumero(equipo.precioTotal)}</b></td>
+                                    </tr>
                             }
                         </tbody>
                     </table>
@@ -221,9 +256,14 @@ function VentanaDetallesEqIngresado({ isOpen, onClose, equipo, cliente }) {
                         onClickImportado={ManejarAtras} typeImportado='button' />
                 </div>
             </div>
-            <BotonForm disabledImportado={modoEditar} idImportado='btnImportadoMarcarEntregado' textoBoton='Marcar Como Entregado' classNameImportado={classBtnMarcarEntregado} onClickImportado={() => setAbrirEstablecerGarantia(true)} />
-            <ModalEstablecerGarantia isOpen={abrirEstablecerGarantia} onClose={() => setAbrirEstablecerGarantia(false)} />
+            <BotonForm disabledImportado={modoEditar} idImportado='btnImportadoMarcarEntregado'
+                textoBoton='Marcar Como Entregado' classNameImportado={classBtnMarcarEntregado}
+                onClickImportado={() => MarcarEntregado()} typeImportado='button' />
         </form>
+            <ModalEstablecerGarantia isOpen={abrirEstablecerGarantia}
+                onClose={() => setAbrirEstablecerGarantia(false)} objeto={objMarcarEntregado} />
+        </div>
+
     );
 }
 export default VentanaDetallesEqIngresado;

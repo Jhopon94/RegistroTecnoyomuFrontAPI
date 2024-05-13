@@ -56,11 +56,15 @@
     width: 100%;
 }
 #formListaEqIngresados > table tr{
+    display: table-row;
+    flex-direction: row;
+    justify-items: start;
     cursor: pointer;
     width: 100%;
     border: 0;
 }
 #formListaEqIngresados > table td{
+    display: flexbox;
     text-align: center;
     width: 50%;
 }

@@ -1,53 +1,132 @@
 import './css/tablaReparacion.css';
 import BotonForm from './BotonForm';
 import VentanaDetallesReparacion from './VentanaDetallesReparacion';
-import { useState } from 'react';
+import { useState, useEffect, Component } from 'react';
+import { BuscarClientes } from '../apis/clienteApi';
+import { BuscarEquiposEntregados, BuscarEquiposIngresados } from '../apis/equipoApi';
+import ListaFiltrada from './FiltroBusqueda';
 
-function TablaReparacion() {
+function TablaReparacion({ isOpen }) {
 
-    const selecEstado = <select className='formListaCliChilds' >
-                            <option>Recibido</option>
-                            <option>En Reparación</option>
-                            <option>Reparado</option>
-                        </select>;
+    const [listaCompletaEquipos, setListaCompletaEquipos] = useState([]);
+    const [listaEquipos, setListaEquipos] = useState([]);
+    const [listaClientes, setListaClientes] = useState([]);
+    const [buscarPor, setBuscarPor] = useState("cedulaCliente");
+    const [equipoSelecc, setEquipoSelecc] = useState(null);
+    const [clienteSelecc, setClienteSelecc] = useState(null);
 
-    const inputFiltro = <input className='formListaCliChilds' id='inputFiltroEqIngresados'></input>;
+    useEffect(() => {
+        ListarEquipos();
+        ListarClientes();
+    }, []);
 
-    const [ abrirDetallesReparacion, setAbrirDetallesReparacion ] = useState(false);
+    async function ListarClientes() {
+        let auxLista = await BuscarClientes();
+        setListaClientes(auxLista);
+    }
+
+    async function ListarEquipos() {
+        let auxLista = await BuscarEquiposIngresados();
+        setListaCompletaEquipos(auxLista);
+    }
+
+    //Acomodar la lita dinámica con los datos de la completa al principio
+    useEffect(() => {
+        setListaEquipos(listaCompletaEquipos);
+    }, [listaCompletaEquipos]);
+
+
+    const selecEstado = <select className='formListaCliChilds'
+        onChange={e => FiltrarLista(e.target.value)}>
+        <option value='ingresado'>Ingresado</option>
+        <option value='enReparacion'>En Reparación</option>
+        <option value='reparado'>Reparado</option>
+    </select>;
+
+    const inputFiltro = <input className='formListaCliChilds' id='inputFiltroEqIngresados'
+        placeholder='Buscar...' onChange={e => FiltrarLista(e.target.value)} />;
+
+    const [abrirDetallesReparacion, setAbrirDetallesReparacion] = useState(false);
     const [mostrarSelect, setMostrarSelect] = useState(false);
 
-    const VerificarFiltroPorEstado = (event) => {
-        const seleccion = event.target.value;
-        console.log(seleccion);
-        if (seleccion == 'estado') setMostrarSelect(true);
+    const VerificarFiltroPorEstado = (valor) => {
+        console.log(valor);
+        if (valor == 'estadoEquipo') setMostrarSelect(true);
         else setMostrarSelect(false);
     }
 
-    /*Recordar cambiar el div por form cuando vaya a hacerlo completo con API*/
+    const ManejarSelectFiltro = (e) => {
+        let valor = e.target.value;
+        setBuscarPor(valor);
+        VerificarFiltroPorEstado(valor);
+    }
+
+    /////////////////////////////////////////////////////////
+    //////////////////// Filtro Búsqueda ////////////////////
+    const FiltrarLista = (criterio) => {
+        setListaEquipos(ListaFiltrada(buscarPor, listaCompletaEquipos, criterio));
+    }
+    /////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////
+
+    //Clic en el equipo deseado
+    const AbrirVentanaEdicion = (equipo) => {
+        setEquipoSelecc(equipo);
+    }
+
+    //Cuando el equipo hace set
+    useEffect(() => {
+        if (equipoSelecc !== null) {
+            setClienteSelecc(listaClientes.find(cliente => cliente['id'] === equipoSelecc.idCliente));
+        }
+    }, [equipoSelecc]);
+
+    //Cuando se selecciona el cliente
+    useEffect(() => {
+        if (clienteSelecc !== null) {
+            console.log(clienteSelecc.nombre);
+            setAbrirDetallesReparacion(true);
+        }
+    }, [clienteSelecc]);
+
+    if (!isOpen) return null;
 
     return (
-            <div className="modal">
-                <div id='formListaEqIngresados'>
+        <div className="modal contListaEquIngReparacion" >
+            <div id='formListaEqIngresados'>
 
-                    {mostrarSelect ? selecEstado : inputFiltro}
-                    
-                    <select name='filtrarListaCli' className='formListaCliChilds' id="selectFiltroEqIngresados" onChange={VerificarFiltroPorEstado}>
-                        <option value="fecha">Fecha</option>
-                        <option value="cedula">Cédula</option>
-                        <option value="nombre">Nombre</option>
-                        <option value='modelo'>Modelo</option>
-                        <option value='estado'>Estado</option>
-                    </select>
-                    <table className='formListaCliChilds' id="tablaListaEqIngresados">
-                        <tr className='editCliFilaTabla' onClick={() => setAbrirDetallesReparacion(true)}>
-                            <td>Nombre del Cliente</td>
-                            <td className='nombreListaEqIngresados'>Modelo Equipo</td>
-                            <td className='nombreListaEqIngresados' >Reparado</td>
+                {mostrarSelect ? selecEstado : inputFiltro}
+
+                <select name='filtrarListaCli' className='formListaCliChilds' id="selectFiltroEqIngresados"
+                    onChange={e => ManejarSelectFiltro(e)}>
+                    <option value="cedulaCliente">Cédula</option>
+                    <option value='modeloEquipo'>Modelo</option>
+                    <option value='estadoEquipo'>Estado</option>
+                </select>
+                <table className='formListaCliChilds' id="tablaListaEqIngresados">
+                    <tbody>
+                        <tr>
+                            <th>Cédula</th>
+                            <th>Modelo Equipo</th>
+                            <th>Estado</th>
                         </tr>
-                    </table>
-                </div>
-                <VentanaDetallesReparacion isOpen={abrirDetallesReparacion} onClose={() => setAbrirDetallesReparacion(false)} />
+                        {
+                            listaEquipos === null ? <tr></tr> :
+                                listaEquipos.map((equipo, indice) => (
+                                    <tr className='editCliFilaTabla'
+                                        onClick={() => AbrirVentanaEdicion(equipo)} key={indice}>
+                                        <td>{equipo.idCliente}</td>
+                                        <td className='nombreListaEqIngresados'>{equipo.modelo}</td>
+                                        <td className='nombreListaEqIngresados' >{equipo.estadoEquipo}</td>
+                                    </tr>
+                                ))
+                        }
+                    </tbody>
+                </table>
             </div>
+            <VentanaDetallesReparacion isOpen={abrirDetallesReparacion}
+                onClose={() => setAbrirDetallesReparacion(false)} equipo={equipoSelecc} cliente={clienteSelecc} />
+        </div>
     );
 }
 export default TablaReparacion;

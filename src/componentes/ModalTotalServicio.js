@@ -3,7 +3,6 @@ import BotonForm from './BotonForm';
 import ModalEditUsuario from './ModalEditUsuario';
 import { useEffect, useState } from 'react';
 import { GuardarEquipo } from '../apis/equipoApi';
-import { useNavigate } from 'react-router-dom';
 import FormatearNumero from './CurrencyFormat';
 
 function ModalTotalServicio({ isOpen, onClose, equipo, listaDetalles }) {
