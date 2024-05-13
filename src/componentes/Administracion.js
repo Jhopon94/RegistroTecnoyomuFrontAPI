@@ -15,7 +15,6 @@ function Administracion() {
                 <div id="contBtnUsuarios"><Link to="/Usuarios"><BotonGeneral idImportado="btnUsuarios" texto="Gestión Usuarios" /></Link></div>
                <div id="contBtnClientes"><Link to="/Clientes"><BotonGeneral idImportado="btnClientes" texto="Gestión Clientes" /></Link></div>
                 <div id="contBtnEquipos"><Link to="/Equipos"><BotonGeneral idImportado="btnEquipos" texto="Gestión Equipos" /></Link></div>
-                <div id="contBtnContable"><Link to="/Contabilidad" state={"admon"}><BotonGeneral idImportado="btnContable" texto="Gestión Contable" /></Link></div>
             </div>
         </div>
     )

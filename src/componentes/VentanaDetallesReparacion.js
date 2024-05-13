@@ -113,7 +113,6 @@ function VentanaDetallesReparacion({ isOpen, onClose, equipo, cliente }) {
             <div id='auxContBotonesDetallesReparacion'>
                 <div id='contBotonesDetallesReparacion' className='dosBotones'>
                     <BotonForm textoBoton="Cambiar Estado" classNameImportado='btnAceptar btnMarcarEntregado' onClickImportado={() => setAbrirCambiarEstado(true)} />
-                    <BotonForm textoBoton="Usar Ítem" classNameImportado='btnRegistrar' onClickImportado={() => setAbrirTiposItem(true)} />
                     <BotonForm textoBoton="Atrás" classNameImportado="btnCancelar" onClickImportado={ManejarAtras} />
                 </div>
             </div>

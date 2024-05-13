@@ -18,7 +18,6 @@ function LogIn() {
                     <Link to="/Administracion">Administración</Link>
                     <Link to="/ServicioCliente">Servicio al Cliente</Link>
                     <Link to="/Reparacion">Reparacion</Link>
-                    <Link to="/Contabilidad" state={"login"}>Contabilidad</Link>
                 </div>
                 <div id="cajasBotones" >
                     <div id="margenSuperior"></div>
