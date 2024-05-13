@@ -4,9 +4,10 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto auto auto;
+    width: 130vh;
 
     grid-template-areas: 
-        "input input select"
+        "input input input"
         "table table table"
         "cancelar cancelar cancelar"
     ;
@@ -41,15 +42,29 @@
 #puntoCli{
     color: greenyellow;
 }
-#formListaEqEntregados > table{
+#formListaEqEntregados  table{
+    display: block;
+    height: 35vh;
     width: 90%;
-    overflow: scroll;
+    overflow-y: auto;
+    overflow-x: hidden;
     border-collapse: separate;
 }
-#formListaEqEntregados > table > tr{
+#formListaEqEntregados  table  tbody{
+    display: block;
+    width: 100%;
+}
+#formListaEqEntregados  table  tr, #formListaEqEntregados  table  thead{
+    display: flex;
+    width: 100%;
     cursor: pointer;
+    font-size: x-large;
 }
 
+#formListaEqEntregados  table  td{
+    display: inline;
+    width: 50%;
+}
 #contBotonesListaEqEntregados{
     display: flex;
     margin: 5vh auto;
@@ -62,4 +77,14 @@
 #formListaEqEntregados td:nth-child(2) {
     border-left: 2px solid red;
     padding-left: 2%;
+  }
+
+  #formListaEqEntregados table tbody tr:nth-child(even){
+    background-color: lightgray;
+  }
+
+  #formListaEqEntregados .tituloTabla{
+    background-color: var(--colorAzulito);
+    color: white;
+    text-align: center;
   }

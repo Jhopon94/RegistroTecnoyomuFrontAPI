@@ -94,3 +94,17 @@
 #formDetallesEqEntregado table th{
     background-color: var(--colorAzulito);
 }
+#formDetallesEqEntregado textarea{
+    resize: none;
+    height: 35vh;
+}
+#formDetallesEqEntregado table .celdaTotalTexto{
+    text-align: right;
+    padding-right: 3%;
+}
+#formDetallesEqEntregado table .columDetalles{
+    text-align: center;
+}
+#formDetallesEqEntregado table tbody tr:nth-child(even){
+    background-color: lightgray;
+}
