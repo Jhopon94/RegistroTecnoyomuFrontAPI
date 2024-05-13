@@ -12,7 +12,7 @@ function ModalRegEmpleado({ isOpen, onClose }) {
         e.preventDefault();
         TemporalFoto();
         await GuardarEmpleado(empleado);
-        onClose();
+        window.location.reload();
     }
 
     const TemporalFoto = () => {

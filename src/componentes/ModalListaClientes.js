@@ -56,6 +56,11 @@ function ModalListaClientes({ isOpen, onClose, deDondeViene }) {
     useEffect(() => {
         if(isOpen && !modalEditCliOpen) ListarClientes();
     }, [modalEditCliOpen]);
+    
+    //Volver a cargar lista al crear uno nuevo
+    useEffect(() => {
+        if(isOpen && !abrirModalRegCliente) ListarClientes();
+    }, [abrirModalRegCliente]);
 
     //para abrir la ventana segun de donde venga la peticion de lista clientes
     const DeDondeViene = (objCliente) => {
@@ -69,8 +74,7 @@ function ModalListaClientes({ isOpen, onClose, deDondeViene }) {
     }
 
     const ManejarCerrar = () => {
-        setBuscarPor("nombre");
-        onClose();
+        window.location.reload();
     }
 
     ///////////////////////// Sección Filtros /////////////////////////
