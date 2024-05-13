@@ -99,3 +99,22 @@ export async function MarcarEntregado(objeto){
         return null;
     }
 }
+
+export async function CambiarEstado(objeto){
+    console.log("Cambiaremos el estado del equipo en: " + url);
+    try {
+        let respCruda = await fetch(url, {
+            "method": 'PUT',
+            "body": JSON.stringify(objeto),
+            "headers": {
+                "Content-Type": 'application/json'
+            }
+        });
+        if(!respCruda.ok)throw new Error('Error de API al cambiar el estado dele quipo!');
+        let respTexto = await respCruda.text();
+        return respTexto;
+    } catch (error) {
+        console.log("Error de Fetch al cambiar el estado del equipo por: ", error);
+        return 'Error de fetch!';
+    }
+}

@@ -45,7 +45,7 @@ function VentanaDetallesReparacion({ isOpen, onClose, equipo, cliente }) {
     //Cuando se llena la lista de detalles
     useEffect(() => {
         if (listaDetalles !== null && listaDetalles !== undefined) {
-            console.log(listaDetalles);
+            //console.log(listaDetalles);
         }
     }, [listaDetalles]);
 
@@ -117,7 +117,8 @@ function VentanaDetallesReparacion({ isOpen, onClose, equipo, cliente }) {
                     <BotonForm textoBoton="Atrás" classNameImportado="btnCancelar" onClickImportado={ManejarAtras} />
                 </div>
             </div>
-            <ModalCambiarEstadoRep isOpen={abrirCambiarEstado} onClose={() => setAbrirCambiarEstado(false)} />
+            <ModalCambiarEstadoRep isOpen={abrirCambiarEstado} 
+            onClose={() => setAbrirCambiarEstado(false)} idEquipo={equipo.id}/>
             <ModalListaTipoItem isOpen={abrirTiposItem} onClose={() => setAbrirTiposItem(false)} vieneDeContabilidad={false} agregandoItem={false} />
         </div>
     );
